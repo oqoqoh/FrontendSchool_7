@@ -1,2 +1,2 @@
 # FrontendSchool_7
-멋자 FE 7기
+멋사 FE 7기
