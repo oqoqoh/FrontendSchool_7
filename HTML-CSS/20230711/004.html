@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>profile-float</title>
+        <style>
+            h2,
+            p {
+                margin: 0;
+            }
+            img {
+                border-radius: 50%;
+            }
+            .profile-float img {
+                border-radius: 50%;
+                float: left;
+                margin-right: 20px;
+            }
+
+            .profile-float h2 {
+                padding-top: 24px;
+            }
+            /* float 뒤 요소들 밀리는 현상 방지 */
+            .clear-fix::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .profile-flex {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="profile-float clear-fix">
+            <img src="http://placehold.it/100x100" alt="" />
+            <h2>lorem</h2>
+            <p>lorem</p>
+        </div>
+        <div class="profile-flex clear-fix">
+            <img src="http://placehold.it/100x100" alt="" />
+            <div>
+                <h2>lorem</h2>
+                <p>lorem</p>
+            </div>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            labore adipisci numquam cum quisquam, maxime amet mollitia ex,
+            dolores impedit iste nisi placeat earum repudiandae sequi!
+            Architecto, ipsam! Obcaecati, facilis.
+        </p>
+    </body>
+</html>

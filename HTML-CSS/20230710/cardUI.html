@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Card UI</title>
+        <style>
+            @font-face {
+                font-family: 'Pretendard';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+                    format('woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Pretendard-Bold';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+                    format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            .card {
+                width: 288px;
+                height: 348px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 2px 2px 8px 8px rgba(0, 0, 0, 0.1);
+                display: inline-block;
+            }
+            .img {
+                width: 100%;
+                aspect-ratio: 288/196;
+                object-fit: cover;
+                border-radius: 8px 8px 0 0;
+            }
+            .content {
+                margin: 16px;
+            }
+            .title {
+                width: 200px;
+                height: 19px;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                color: var(--text-1, #29363d);
+                font-family: Pretendard-Bold;
+                font-size: 16px;
+                line-height: normal;
+                font-style: normal;
+            }
+            .text {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+
+                width: 256px;
+                height: 40px;
+
+                color: var(--text-2, #5a6a72);
+                font-family: Pretendard;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+            }
+            .footer {
+                width: 70px;
+                height: 24px;
+
+                color: var(--text-1, #29363d);
+                font-family: Pretendard-Bold;
+                font-size: 14px;
+                font-style: normal;
+                line-height: normal;
+                text-decoration-line: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <article class="card">
+            <img class="img" src="./images/unsplash_lB9ylP8e9Sg.png" alt="" />
+            <div class="content">
+                <p class="title">그것을 피가 청춘을 것이다</p>
+                <p class="text">
+                    청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가
+                    충분히 청춘 것이다. 얼마나 반짝이는 소담스운 열락의
+                    아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직
+                    군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을
+                    생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리
+                    평화스러운 있는가?
+                </p>
+                <p class="footer">Read</p>
+            </div>
+        </article>
+        <article class="card">
+            <img class="img" src="./images/unsplash_lB9ylP8e9Sg.png" alt="" />
+            <div class="content">
+                <p class="title">
+                    그것을 피가 청춘을 것이다.이것은 몸이 때문이다. 사는가
+                    고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는
+                </p>
+                <p class="text">청춘의 하였으며,</p>
+                <p class="footer">Read</p>
+            </div>
+        </article>
+    </body>
+</html>

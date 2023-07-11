@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>flex-grow</title>
+        <style>
+            .container {
+                height: 300px;
+                display: flex;
+                background-color: #ddd;
+            }
+
+            .item {
+                background-color: skyblue;
+                border: 2px solid royalblue;
+                /* items들을 똑같은 크기로 분활하고 싶을때, text가 기준이 아닌 flex-basis: 0;으로 초기화 */
+                flex-grow: 1;
+                flex-basis: 0;
+            }
+            .item1 {
+                flex-grow: 2;
+            }
+            .item2 {
+                flex-grow: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="item item1">item A aaaa</div>
+            <div class="item item2">item B bbb</div>
+            <div class="item item3">item C cc</div>
+            <div class="item item4">item D d</div>
+        </div>
+    </body>
+</html>

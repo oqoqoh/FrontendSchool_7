@@ -1,0 +1,72 @@
+/* 폰트 */
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body,
+h1,
+p {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+.login-wrap {
+    width: 310px;
+    height: 100px;
+    font-size: 12px;
+    font-family: 'SpoqaHanSansNeo-Regular';
+    display: flex;
+    flex-direction: column;
+    /* background-image: url('./img/log-in-area.png'); */
+    background-repeat: no-repeat;
+    /* background-position: 0px 0px; */
+    background-position: -1px -1px;
+    background-size: 350px 140px;
+
+    padding: 19px 16px;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+
+    padding: 19px 15px;
+}
+.login-btn {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #711bff;
+    border-radius: 4px;
+    margin: 14px 0;
+}
+.login-btn img {
+    width: 64px;
+    margin: 11px 0;
+}
+.login-link {
+    color: #767676;
+    display: flex;
+    justify-content: space-between;
+}
+.login-link span {
+    margin: 0 2px;
+}
+.login-link img {
+    width: 16px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
