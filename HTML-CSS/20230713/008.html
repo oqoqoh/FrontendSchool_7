@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>transform</title>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: royalblue;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .box:nth-child(even) {
+                background-color: seagreen;
+            }
+            .scale {
+                transform-origin: 0 0;
+                transition: all 0.3s;
+            }
+            .scale:hover {
+                /* transform: scaleX(1.5); */
+                /* transform: rotate(5deg); */
+                transform: translate(-50px, 50px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box scale">box</div>
+        <div class="box">box</div>
+    </body>
+</html>

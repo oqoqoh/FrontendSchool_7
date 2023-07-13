@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>button</title>
+        <style>
+            button {
+                width: 88px;
+                height: 32px;
+                border-radius: 0;
+                background-color: #343f50;
+                border: 1px solid #1a202c;
+                box-shadow: inset 2px 2px 0 0 #4a5568;
+            }
+
+            .btn1 {
+                color: #cbd5df;
+            }
+            .btn1:hover {
+                color: white;
+                text-decoration: underline;
+            }
+            .btn1:active {
+                text-decoration: underline;
+                box-shadow: inset 2px 2px 0 0 #262f3e;
+            }
+            .btn1:disabled {
+                color: #4a5568;
+            }
+
+            .btn2 {
+                color: #439aff;
+            }
+            .btn2:hover {
+                color: #fefefe;
+                background-color: #439aff;
+                text-decoration: underline;
+                border: 1px solid #439aff;
+                box-shadow: inset 2px 2px 0 0 #73b4ff;
+            }
+            .btn2:active {
+                color: #fefefe;
+                background-color: #439aff;
+                text-decoration: underline;
+                border: 1px solid #439aff;
+                box-shadow: inset 2px 2px 0 0 #3b78be;
+            }
+
+            .btn3 {
+                color: #eb5757;
+            }
+            .btn3:hover {
+                color: #fefefe;
+                background-color: #eb5757;
+                text-decoration: underline;
+                border: 1px solid #eb5757;
+                box-shadow: inset 2px 2px 0 0 #fd6f6f;
+            }
+            .btn3:active {
+                color: #fefefe;
+                background-color: #eb5757;
+                text-decoration: underline;
+                border: 1px solid #eb5757;
+                box-shadow: inset 2px 2px 0 0 #d94242;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn1" type="button">Button</button>
+        <button class="btn1" type="button" disabled>Button</button>
+        <button class="btn2" type="button">Yes</button>
+        <button class="btn3" type="button">Del</button>
+    </body>
+</html>

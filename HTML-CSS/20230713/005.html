@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>가상요소</title>
+        <style>
+            button:active {
+                background-color: red;
+            }
+            button:hover {
+                background-color: gold;
+            }
+            /* 마우스 클릭시에도 보임 */
+            .btn1:focus {
+                border: 5px solid seagreen;
+            }
+            /* 마우스 클릭시에는 안 보임 */
+            .btn2:focus-visible {
+                border: 5px solid seagreen;
+            }
+            div:focus-within {
+                background-color: slateblue;
+            }
+
+            input:active {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button class="btn1" type="button">btn1</button>
+            <button class="btn2" type="button">btn2</button>
+        </div>
+        <input type="text" />
+    </body>
+</html>
