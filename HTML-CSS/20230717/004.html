@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <style>
+            .container {
+                background-color: #eee;
+                border: 4px solid #000;
+
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .item:nth-child(odd) {
+                background-color: skyblue;
+            }
+            .item.a {
+                background-color: salmon;
+
+                /* grid-row-start: 2;
+                grid-row-end: 4;
+                grid-column-start: 2;
+                grid-column-end: 4; */
+
+                /* grid-row: 2/4;
+                grid-column: 2/4; */
+
+                grid-area: 2/2/4/4;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item a">1</div>
+            <div class="item b">2</div>
+            <div class="item c">3</div>
+            <div class="item d">4</div>
+            <div class="item e">5</div>
+            <div class="item f">6</div>
+            <div class="item g">7</div>
+            <div class="item h">8</div>
+            <div class="item i">9</div>
+        </div>
+    </body>
+</html>

@@ -11,9 +11,10 @@
                 justify-content: center;
             }
             table {
+                table-layout: fixed;
                 width: 100%;
                 border-collapse: collapse;
-                border: 2px solid black;
+                border: 3px solid black;
                 margin: 0 50px;
             }
             caption {
@@ -22,10 +23,10 @@
             }
             th,
             td {
-                /* border: 1px solid #ddd; */
                 border: 2px solid black;
                 text-align: center;
                 font-size: 20px;
+                padding: 4px 12px;
             }
             th {
                 background-color: #eee;
@@ -35,22 +36,15 @@
                 font-size: 20px;
                 font-weight: 800;
             }
-            .col1 {
-                width: 5%;
-            }
         </style>
     </head>
 
     <body>
-        <!-- <h2>테이블의 제목</h2> -->
         <table>
             <caption>
                 2023 학년도 대학수능능력시험 성적통지표
             </caption>
             <colgroup>
-                <!-- <col class="col1" />
-                <col style="width: 20%" span="2" class="col2" />
-                <col class="col3" /> -->
                 <col class="col1" />
                 <col class="col1" />
                 <col class="col1" />
@@ -67,16 +61,13 @@
                     <th scope="col">국어 영역</th>
                     <th scope="col">수학 영역</th>
                     <th scope="col" rowspan="2">영어 영역</th>
-                    <th scope="col" colspan="2">탐구 영역</th>
-                    <!-- <th scope="col">탐구 영역</th> -->
+                    <th scope="colgroup" colspan="2">탐구 영역</th>
                     <th scope="col">제2외국어/한문 영역</th>
                 </tr>
                 <tr>
                     <th>선택과목</th>
-                    <!-- <th scope="col">한국사 영역</th> -->
                     <th scope="col">화법과 작문</th>
                     <th scope="col">확률과 통계</th>
-                    <!-- <th scope="col">영어 영역</th> -->
                     <th scope="col">생활과 윤리</th>
                     <th scope="col">지구과학 1</th>
                     <th scope="col">독일어</th>
@@ -95,13 +86,10 @@
                 </tr>
                 <tr>
                     <th scope="row">백분위</th>
-                    <!-- <td>&nbsp;</td> -->
                     <td>93</td>
                     <td>95</td>
-                    <!-- <td>&nbsp;</td> -->
                     <td>75</td>
                     <td>93</td>
-                    <!-- <td>&nbsp;</td> -->
                 </tr>
                 <tr></tr>
             </tbody>

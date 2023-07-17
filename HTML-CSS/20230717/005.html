@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-layout</title>
+        <style>
+            .warp {
+                width: 300px;
+                background-color: salmon;
+            }
+            .grid {
+                height: 150px;
+                display: grid;
+                grid-template-columns: 2fr 100px;
+                grid-template-rows: 1fr;
+                grid-row: 1/1/2/1;
+            }
+            header {
+                background-color: royalblue;
+            }
+            section {
+                background-color: slateblue;
+            }
+            aside {
+                background-color: aquamarine;
+            }
+            footer {
+                background-color: seagreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <header>header</header>
+            <div class="grid">
+                <section>section > article</section>
+                <aside>aside</aside>
+            </div>
+            <footer>footer</footer>
+        </div>
+    </body>
+</html>
