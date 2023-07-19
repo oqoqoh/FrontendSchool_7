@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>로그인 | 두근두근 비밀일기</title>
+        <style>
+            a {
+                text-decoration: none;
+                color: #5a6a72;
+            }
+            input {
+                border-style: none;
+            }
+            header {
+                background-color: #ffffff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .head-logo {
+                aspect-ratio: 158/75;
+                width: 156px;
+                height: 75px;
+                flex-shrink: 0;
+            }
+            .join-logo {
+                padding: 4px 20px 4px 10px;
+            }
+            .join-logo img {
+                vertical-align: middle;
+            }
+            body {
+                background-color: #fffaf0;
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .login-logo {
+                aspect-ratio: 250/120;
+                width: 249.6px;
+                height: 120px;
+                flex-shrink: 0;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            form input {
+                width: 392px;
+                height: 48px;
+                flex-shrink: 0;
+                border-radius: 4px 4px 0px 0px;
+                border-bottom: 1px solid #677880;
+                background: #fff;
+                margin-bottom: 24px;
+            }
+            form button {
+                width: 392px;
+                height: 48px;
+                border-radius: 4px;
+                color: #f4f5f5;
+                font-weight: bold;
+                background-color: #29363d;
+                margin-bottom: 52px;
+            }
+            footer {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="./" class="main-logo">
+                    <img src="./img/logo.svg" alt="홈 로고" class="head-logo" />
+                </a>
+            </h1>
+            <div class="join-logo">
+                <a href="./join.html"><img src="./img/icon-join.svg" alt="회원가입 아이콘" /> 회원가입</a>
+            </div>
+        </header>
+        <!--// header -->
+
+        <!-- main -->
+        <main>
+            <h2 class="logo-container">
+                <img src="./img/logo.svg" alt="로그인 로고" class="login-logo" />
+                <p>로그인</p>
+            </h2>
+
+            <form action="#">
+                <label for="user-email">이메일</label>
+                <input type="email" id="user-email" />
+
+                <label for="user-pwd">비밀번호</label>
+                <input type="password" id="user-pwd" />
+
+                <button type="submit">로그인</button>
+            </form>
+        </main>
+        <!--// main -->
+
+        <!-- footer -->
+        <footer>
+            <p>Copyright 2023. OH All rights reserved.</p>
+        </footer>
+        <!--// footer -->
+    </body>
+</html>
