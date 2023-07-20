@@ -1,0 +1,48 @@
+h1,
+p {
+    font-size: unset;
+    font-weight: unset;
+    margin: unset;
+    padding: unset;
+}
+img,
+div {
+    margin: 0;
+}
+
+body {
+    background-image: url('./images/bg.png');
+}
+
+.animal {
+    text-align: center;
+}
+
+.ground {
+    width: 300px;
+    height: 300px;
+    background-color: #9c6035;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: 0px 0px 30px 30px;
+    border-bottom: 10px solid #46260e;
+}
+.ground h1 {
+    color: #fff;
+    font-family: Arial;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 10px 20px;
+}
+.ground p {
+    color: #e8bc9c;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    padding: 0 20px 60px 20px;
+}

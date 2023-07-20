@@ -1,0 +1,9 @@
+.wrap {
+    display: flex;
+}
+.head {
+    width: 491px;
+    height: 506px;
+    background-color: skyblue;
+    background-position: 50%;
+}
