@@ -63,8 +63,14 @@ div {
     }
 }
 @keyframes uphand {
+    0% {
+        right: 73%;
+    }
+    10% {
+        right: 73%;
+    }
     30% {
-        right: 30%;
+        right: 40%;
     }
     50% {
         right: 20%;
@@ -77,9 +83,11 @@ div {
     }
 }
 @keyframes downhand {
+    0% {
+        right: 73%;
+    }
     10% {
-        width: 140px;
-        height: 220px;
+        right: 73%;
     }
     100% {
         left: -999%;
@@ -90,34 +98,107 @@ div {
         top: -900%;
     }
     10% {
-        bottom: 10%;
+        bottom: 15%;
         rotate: 0deg;
     }
     30% {
-        bottom: 10%;
+        bottom: 15%;
         rotate: 0deg;
     }
     50% {
-        bottom: 10%;
+        bottom: 15%;
         rotate: 0deg;
     }
     70% {
-        bottom: 10%;
+        bottom: 15%;
         rotate: 0deg;
     }
     80% {
-        bottom: 10%;
-        rotate: 195deg;
+        bottom: 5%;
+        rotate: 180deg;
     }
     90% {
-        bottom: 10%;
-        rotate: 165deg;
+        bottom: 7%;
+        rotate: 175deg;
     }
     100% {
-        bottom: 10%;
+        bottom: 5%;
         rotate: 180deg;
     }
 }
+@keyframes bg1 {
+    50% {
+        background-size: 0;
+    }
+    55% {
+        background: url('./img/bgPeace.png') no-repeat 90% 50%;
+    }
+    80% {
+        background: url('./img/bgPeace.png') no-repeat 87% 50%;
+    }
+    100% {
+        background: url('./img/bgPeace.png') no-repeat 90% 50%;
+    }
+}
+@keyframes bg2 {
+    50% {
+        background-size: 0;
+    }
+    55% {
+        background-size: 0;
+    }
+    80% {
+        background: url('./img/bgAtown.png') no-repeat 3% 30%;
+    }
+    100% {
+        background: url('./img/bgAtown.png') no-repeat 1% 40%;
+    }
+}
+@keyframes bg3 {
+    50% {
+        background-size: 0;
+    }
+    55% {
+        background-size: 0;
+    }
+    85% {
+        background-size: 0;
+    }
+    95% {
+        background: url('./img/bgYeah.png') no-repeat 85% 80%;
+    }
+    100% {
+        background: url('./img/bgYeah.png') no-repeat 80% 80%;
+    }
+}
+
+.bg1 {
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+
+    position: absolute;
+    animation: linear bg1 5s infinite;
+}
+
+.bg2 {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+
+    position: absolute;
+    animation: linear bg2 5s infinite;
+}
+
+.bg3 {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+
+    position: absolute;
+    animation: linear bg3 5s infinite;
+}
+
 .riceman {
     width: 600px;
     height: 600px;
@@ -223,5 +304,5 @@ div {
     background: url('./img/v-hand.svg') no-repeat 0 0;
     position: absolute;
 
-    animation: linear vhand 5s infinite;
+    animation: cubic-bezier(1, 0.13, 0.1, 1.77) vhand 5s infinite;
 }
