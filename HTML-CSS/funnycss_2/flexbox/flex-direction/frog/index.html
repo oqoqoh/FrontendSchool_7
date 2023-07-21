@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexing</title>
+        <style>
+            body {
+                background-color: brown;
+            }
+            .playground {
+                border: 10px solid maroon;
+                width: 980px;
+                margin: 0 auto;
+                border-radius: 30px;
+                background-color: skyblue;
+                display: flex;
+            }
+            .frog {
+                background-color: mediumseagreen;
+                color: lime;
+                font-size: 40px;
+                border: 6px solid green;
+                border-radius: 10px;
+                margin: 10px;
+
+                /* flex-basis: 0; 시각적으로 표시가 안됨 -> min-width:auto 때문에 */
+                flex-basis: auto;
+
+                /* flex-grow 는 flex-basis + 남은 여백 비율만큼  */
+                /* flex-grow: 0; */
+
+                /* flex-shrink: 1; */
+
+                /* min-width */
+                /* min-width:auto = flex-item block안에 content 크기 */
+                /* flex-basis만큼 확보 못할때 || 보다 커지거나 넘어갈때 = min-width 적용 */
+                /* width값이 정해져있고 basis auto면 width 값 가져온다. min-width에도 적용 */
+                /* min-width: 0; */
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="playground">
+            <!-- <div class="frog cry"><img src="./images/frog-cry.png" alt="" /></div>
+            <div class="frog"><img src="./images/frog.png" alt="" /></div>
+            <div class="frog"><img src="./images/frog.png" alt="" /></div>
+            <div class="frog"><img src="./images/frog-dj.png" alt="" /></div>
+            <div class="frog"><img src="./images/frog-dj.png" alt="" /></div>
+            <div class="frog sun"><img src="./images/frog-disco.png" alt="" /></div> -->
+            <div class="frog">frogfrog</div>
+            <div class="frog">frog</div>
+            <div class="frog">frog</div>
+        </div>
+    </body>
+</html>
