@@ -1,0 +1,119 @@
+/* reset */
+body,
+h1,
+h2,
+p {
+    margin: unset;
+    padding: unset;
+}
+
+h1,
+h2 {
+    color: unset;
+    font-size: unset;
+    font-weight: normal;
+}
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* CSS */
+body {
+    background-color: #d9d9d9;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .card {
+    width: 448px;
+    height: 494px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* card title */
+.card .card-title {
+    flex-basis: 110px;
+    background-color: #ffffff;
+
+    border-radius: 20px 20px 0px 0px;
+    border-bottom: 4px solid #ddd;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.card .card-title span::before {
+    content: '\00a0';
+    width: 8px;
+    height: 32px;
+    border-radius: 0px 10px 10px 0px;
+    background: #ff007a;
+    font-size: 24px;
+    font-weight: 700;
+}
+.card .card-title h2 {
+    color: #ff007a;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 35px;
+}
+
+/* card content */
+.card .card-content {
+    flex-grow: 1;
+
+    background-color: #eeeeee;
+    border-radius: 0 0 20px 20px;
+    background: #eee;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.card-content .text-wrap {
+    width: 350px;
+    height: 45px;
+
+    padding-left: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 4px solid #d9d9d9;
+    background: #fff;
+
+    color: #888888;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* checked list */
+.card-content .text-check {
+    border: 4px solid #759cff;
+    color: #759cff;
+    font-weight: 700;
+}
+.card-content .text-check svg {
+    padding-right: 15px;
+}
