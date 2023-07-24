@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vending Machine</title>
+
+        <link rel="stylesheet" href="./style/index.css" />
+    </head>
+    <body>
+        <header>
+            <h1>
+                <p class="a11y-hidden">콜라 자판기</p>
+                <img src="./img/cola-logo.png" alt="자판기 로고" />
+            </h1>
+        </header>
+        <main>
+            <section class="section1">
+                <h2 class="a11y-hidden">자판기 목록</h2>
+                <ul class="vending-list">
+                    <li>
+                        <button type="button" class="btn-cola on">
+                            <img src="./img/cola-original.png" />
+                            <span class="cola-name">cola-original</span>
+                            <strong class="cola-price">1000원 </strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-cola" disabled>
+                            <img src="./img/cola-violet.png" />
+                            <span class="cola-name">cola-violet</span>
+                            <strong class="cola-price">1000원 </strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-cola">
+                            <img src="./img/cola-cool.png" />
+                            <span class="cola-name">cola-cool</span>
+                            <strong class="cola-price">1000원 </strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-cola">
+                            <img src="./img/cola-yellow.png" />
+                            <span class="cola-name">cola-yellow</span>
+                            <strong class="cola-price">1000원 </strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-cola on">
+                            <img src="./img/cola-green.png" />
+                            <span class="cola-name">cola-green</span>
+                            <strong class="cola-price">1000원 </strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-cola">
+                            <img src="./img/cola-orange.png" />
+                            <span class="cola-name">cola-orange</span>
+                            <strong class="cola-price">1000원 </strong>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="cart">
+                    <div class="box-balance">
+                        <h2>잔액 :</h2>
+                        <strong>1,000원</strong>
+                    </div>
+                    <button type="button" class="btn">거스름돈 반환</button>
+
+                    <label for="input-money" class="a11y-hidden">입금액</label>
+                    <input type="number" id="input-money" min="1000" step="1000" placeholder="입금액 입력" />
+                    <button type="button" class="btn">입금</button>
+
+                    <ul class="cart-list">
+                        <li class="cart-item">
+                            <img src="./img/cola-original.png" alt="" />
+                            <p>cola-original</p>
+                            <strong>
+                                1
+                                <span class="a11y-hidden"> 개 </span>
+                            </strong>
+                        </li>
+                        <li class="cart-item">
+                            <img src="./img/cola-original.png" alt="" />
+                            <p>cola-original</p>
+                            <strong>
+                                1
+                                <span class="a11y-hidden"> 개 </span>
+                            </strong>
+                        </li>
+                        <li class="cart-item">
+                            <img src="./img/cola-original.png" alt="" />
+                            <p>cola-original</p>
+                            <strong>
+                                1
+                                <span class="a11y-hidden"> 개 </span>
+                            </strong>
+                        </li>
+                        <li class="cart-item">
+                            <img src="./img/cola-original.png" alt="" />
+                            <p>cola-original</p>
+                            <strong>
+                                1
+                                <span class="a11y-hidden"> 개 </span>
+                            </strong>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn">뽑기</button>
+                </div>
+            </section>
+
+            <div class="container">
+                <section class="section2">sec2</section>
+                <section class="section3">sec3</section>
+            </div>
+        </main>
+    </body>
+</html>
