@@ -4,7 +4,8 @@ h1,
 h2,
 p,
 ul,
-button {
+button,
+div {
     margin: 0;
     padding: 0;
 }
@@ -39,27 +40,59 @@ button {
 
 /* css */
 body {
-    background-color: skyblue;
+    background-color: #eae8fe;
 }
+h1 {
+    text-align: center;
+}
+
 main {
     width: 748px;
     max-height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-areas:
+        'section1 section2'
+        'section1 section3';
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px auto;
+    gap: 20px 28px;
+    margin: 67px auto;
 }
 
 .section1 {
-    background-color: seagreen;
-    width: 360px;
+    background-color: white;
+    grid-area: section1;
 }
 .section2 {
-    background-color: burlywood;
+    background-color: white;
+    grid-area: section2;
+    padding: 9px 27px;
 }
 .section3 {
-    background-color: slateblue;
-}
+    background-color: white;
+    grid-area: section3;
 
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+/* 뽑은 음료 */
+.section3 h2 {
+    text-align: center;
+    margin: 25px 0 0;
+}
+.section3 .cart-list {
+    /* width: 80%; */
+    flex-basis: 364px;
+    flex-grow: 1;
+    margin: 13px 32px 0;
+    overflow: auto;
+}
+.section3 .total-price {
+    text-align: right;
+    font-size: 12px;
+    margin: 8px 32px 26px;
+}
 /* 자판기 목록 */
 .vending-list {
     display: grid;
@@ -78,7 +111,7 @@ main {
 }
 .btn-cola.on {
     border-radius: 10px;
-    border: 4px solid #6327fe;
+    box-shadow: 0 0 0 4px #6327fe;
 }
 .btn-cola:disabled {
     position: relative;
@@ -153,13 +186,24 @@ main {
     font-size: 13px;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
 }
+.btn.btn-order {
+    color: white;
+    background: #6327fe;
+}
+#input-money {
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    font-size: 13px;
+    font-weight: 500;
+    color: #bdbdbd;
+}
 
 /* 장바구니*/
 .cart-list {
     background-color: #eae8fe;
     border-radius: 5px;
     border: 1px solid #bdbdbd;
-    padding: 12px 18px 0 12px;
+    padding: 10px 18px 0 8px;
     overflow: auto;
 }
 .cart-item {
