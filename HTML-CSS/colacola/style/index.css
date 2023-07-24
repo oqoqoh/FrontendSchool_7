@@ -129,9 +129,10 @@ main {
     background-color: white;
 
     display: grid;
-    grid-template-columns: 1.7fr 1fr;
+    grid-template-columns: 2fr 0.9fr;
     grid-template-rows: 33px 33px 106px;
     gap: 12px 10px;
+    padding: 20px 27px 28px;
 }
 
 .box-balance {
@@ -162,7 +163,8 @@ main {
     overflow: auto;
 }
 .cart-item {
-    padding: 6px 10px;
+    width: 100%;
+    padding: 3px 5px;
     margin-bottom: 6px;
     background-color: white;
     border-radius: 5px;
@@ -174,6 +176,7 @@ main {
     padding: 6px 10px;
 }
 .cart-item p {
+    font-size: 9px;
     margin: auto 0;
 }
 .cart-item strong {
