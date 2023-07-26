@@ -5,13 +5,23 @@
         <style>
             body {
                 background-color: brown;
+
+                height: 100vh;
+                box-shadow: inset 0 0 100px royalblue;
+
+                display: flex;
             }
             .playground {
                 border: 10px solid maroon;
+
                 width: 980px;
-                margin: 0 auto;
+                margin: auto auto;
+
                 border-radius: 20px;
                 background-color: skyblue;
+
+                display: flex;
+                /* justify-content: center; */
             }
             .frog {
                 background-color: mediumseagreen;
@@ -20,14 +30,21 @@
                 margin: 10px;
                 border: 6px solid green;
                 border-radius: 10px;
+
+                flex-basis: 200px;
+
+                /* 이미지 사이즈가(컨텐츠 사이즈가) 더 이상 줄어들 수 없다. 그러면 넘어감 */
+            }
+            .frog.first {
+                background-color: orangered;
             }
         </style>
     </head>
     <body>
-
         <div class="playground">
-            <div class="frog">Frog</div>
+            <div class="frog first"><img src="./images/frog.png" alt="" /></div>
+            <div class="frog"><img src="./images/frog.png" alt="" /></div>
+            <div class="frog"><img src="./images/frog.png" alt="" /></div>
         </div>
-
     </body>
 </html>

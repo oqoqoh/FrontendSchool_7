@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8" />
         <title>06 Position</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" />
         <style>
             body {
                 background-color: #ddd;
@@ -23,16 +23,23 @@
             .children {
                 width: 100px;
                 height: 100px;
+
+                /* 본 위치는 그대로, 시각적으로만 이동 */
+                /* transform: translateX(-50%); */
+
+                /* 공간자체 이동, 뒤 요소도 같이 따라옴 */
+                /* margin-left: -50%; */
+
+                /* position: fixed;
+                inset: 0;
+                display: flex;
+                margin: auto; */
             }
         </style>
-	</head>
-	<body>
-
+    </head>
+    <body>
         <div class="grand-father">
-            <div class="father">
-                <img class="children" src="img.png">
-            </div>
+            <div class="father"><img class="children" src="img.png" />child</div>
         </div>
-       
-	</body>
+    </body>
 </html>

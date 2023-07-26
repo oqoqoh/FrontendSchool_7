@@ -53,7 +53,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-color: skyblue;
+    background-color: white;
 }
 
 .mdl-container {
@@ -63,16 +63,141 @@ body {
     border-radius: 10px;
     border: 1px solid var(--c-4-c-4-c-4, #c4c4c4);
 
-    display: flex;
+    /* flex 중앙정렬 말고 margin으로 변경 */
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; */
+}
+
+/* 상단 */
+.mdl-title {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 18px;
+
+    position: relative;
+}
+.mdl-title:before,
+.mdl-title:after {
+    content: '';
+    position: absolute;
+
+    height: 16px;
+    width: 1px;
+
+    right: 24px;
+    top: 0;
+
+    background-color: #767676;
+}
+.mdl-title:before {
+    transform: rotate(45deg);
+}
+.mdl-title:after {
+    transform: rotate(-45deg);
+}
+.login-header::after {
+    content: '';
+    width: 100%;
+
+    display: block;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+/* 로그인 form 영역*/
+.wrap {
+    /* box-shadow: inset 0 0 20px royalblue; */
+    margin: 28px 24px;
+}
+.login-title {
+    font-size: 20px;
+}
+.inpt {
+    width: 456px;
+    height: 50px;
+
+    border-radius: 5px;
+    border: 1px solid var(--c-4-c-4-c-4, #c4c4c4);
+    color: #767676;
+    padding-left: 16px;
+}
+.inpt:first-child {
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+/* 로그인 상태 유지 */
+.hold-wrap {
+    margin-top: 17px;
+    margin-bottom: 21px;
+
+    display: flex;
     align-items: center;
+}
+
+.txt-hide {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+}
+.labl-hold::before {
+    display: inline-block;
+    content: '';
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+
+    background-image: url('../img/icon-check.svg');
+    vertical-align: -5px;
+}
+.labl-hold {
+    color: var(--767676, #767676);
+}
+
+.inp-hold:checked + .labl-hold:before {
+    background: url('../img/icon-checked.svg');
+}
+
+/* 로그인 버튼  */
+.btn-login {
+    width: 474px;
+    height: 50px;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    color: white;
+
+    border-radius: 5px;
+    background: #2f80ed;
+}
+
+/* 회원가입,아이디/비밀번호 찾기 */
+.join-find-container {
+    color: var(--767676, #767676);
+    font-size: 14px;
+    font-weight: 400;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+.spn-divide {
+    margin: 0 12px;
 }
 
 /* 소셜로그인 영역 */
 .social-login.line {
     color: var(--767676, #767676);
     font-size: 14px;
+
+    margin-bottom: 10px;
 
     display: flex;
     flex-basis: 100%;
@@ -109,6 +234,8 @@ body {
     text-align: center;
     color: var(--767676, #767676);
     font-size: 16px;
+
+    margin-top: 10px;
 
     border-radius: 5px;
     border: 1px solid var(--767676, #767676);
@@ -149,17 +276,17 @@ body {
 .link-social-login .icon-google::before {
     width: 28px;
     height: 28px;
-    background-position: -10px -10px;
+    background-position: -10px -12px;
 }
 .link-social-login .icon-facebook::before {
     width: 28px;
     height: 28px;
-    background-position: -58px -10px;
+    background-position: -56px -12px;
 }
 .link-social-login .icon-naver::before {
     width: 28px;
     height: 28px;
-    background-position: -58px -58px;
+    background-position: -56px -58px;
 }
 .link-social-login .icon-kakao::before {
     width: 28px;
