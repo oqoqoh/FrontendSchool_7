@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="container">
+        <article class="start">
+            <h1 class="text-center mt-5">나랑 찰떡인 떡 종류는?</h1>
+            <button type="button" class="btn btn-outline-success mt-5" onclick="start()">테스트 시작</button>
+        </article>
+
+        <article class="question">
+            <div class="progress mt-5">
+                <div class="progress-bar bg-success" role="progressbar" style="width: calc(100 / 12 * 1%)"></div>
+            </div>
+
+            <h2 id="title" class="mt-5 text-center">질문</h2>
+            <input id="type" type="hidden" value="EI" />
+            <button id="A" type="button" class="btn btn-success mt-5">Success</button>
+
+            <button id="B" type="button" class="btn btn-success mt-5">Success</button>
+        </article>
+
+        <article class="result">
+            <img id="img" class="rounded-pill mt-5" src="./img/cape-town.jpg" alt="cape town" />
+            <h2 id="place" class="text-center mt-5">결과</h2>
+            <h3 id="explain" class="text-center mt-5">내용</h3>
+        </article>
+        <input type="hidden" id="EI" value="0" />
+        <input type="hidden" id="SN" value="0" />
+        <input type="hidden" id="TF" value="0" />
+        <input type="hidden" id="JP" value="0" />
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script>
+            let currentNum = 1;
+            const questions = {
+                1: {
+                    title: '나에게 여행이란',
+                    type: 'EI',
+                    A: '친구나 일행과 함께 추억을 쌓는 것이다.',
+                    B: '진정한 여행은 홀로 가는 것이다.',
+                },
+                2: {
+                    title: '여행 후 사진 갤러리에는',
+                    type: 'EI',
+                    A: '인물 사진이 더 많다.',
+                    B: '풍경 사진이 더 많다.',
+                },
+                3: {
+                    title: '질문 3번',
+                    type: 'EI',
+                    A: 'E',
+                    B: 'I',
+                },
+
+                4: { title: '질문 4번', type: 'SN', A: 'S', B: 'N' },
+                5: { title: '질문 5번', type: 'SN', A: 'S', B: 'N' },
+                6: { title: '질문 6번', type: 'SN', A: 'S', B: 'N' },
+
+                7: { title: '질문 7번', type: 'TF', A: 'T', B: 'F' },
+                8: { title: '질문 8번', type: 'TF', A: 'T', B: 'F' },
+                9: { title: '질문 9번', type: 'TF', A: 'T', B: 'F' },
+
+                10: {
+                    title: '2박3일 도쿄 여행을 간다면',
+                    type: 'JP',
+                    A: '촉박하다. 계획을 효율적으로 정리한다.',
+                    B: '하루에 가보고 싶은곳 1~2곳. 나머지는 유동적으로 다닌다.',
+                },
+                11: {
+                    title: '베트남의 유명 쌀국수집을 찾아 왔다. 가게 안은 온통 한국인 뿐이다.',
+                    type: 'JP',
+                    A: '유명한 맛집이다. 그냥 먹는다.',
+                    B: '쌀국수 맛 비슷하다. 현지인도 있는 다른 식당으로 간다.',
+                },
+                12: {
+                    title: '내일 2주간 미국 서부 여행을 간다. 캐리어는 아직 비어있다. ',
+                    type: 'JP',
+                    A: '설마 내가? 그럴 일은 없다.',
+                    B: '이제 입을 옷들을 하나 둘 챙긴다.',
+                },
+            };
+
+            const results = {
+                ESTP: {
+                    place: '캐나다의 밴프 국립공원',
+                    title: '모험을 즐기는 여행자',
+                    explain: '산악 풍경과 액티비티로 가득한 곳으로 다양한 모험을 즐길 수 있습니다.',
+                    img: 'banff.jpg',
+                },
+                ESTJ: {
+                    place: '도쿄',
+                    title: '나의 도쿄는 라멘집 리스트만 책 한 권.',
+                    explain: '',
+                    img: '',
+                },
+                ESFP: { place: 'test', title: '', explain: '', img: '' },
+                ESFJ: { place: 'test', title: '', explain: '', img: '' },
+                ENFP: {
+                    place: 'LOS ANGELES',
+                    title: '여기도 저기도 짜릿하다.',
+                    explain: '활기찬 파티와 아름다운 해변을 즐길 수 있는 곳입니다.',
+                    img: 'kho-samui.jpg',
+                },
+                ENFJ: {
+                    place: '',
+                    title: '',
+                    explain: '',
+                    img: '',
+                },
+                ENTP: { place: '모로코', title: '내가 가는길, 뜻이 있다.', explain: '', img: '' },
+                ENTJ: {
+                    place: '울루루',
+                    title: '위치는 간단하다. 하지만 도착이 쉽지만은 않다.',
+                    explain: '',
+                    img: '',
+                },
+                ISTP: {
+                    place: '모로코',
+                    title: '사하라에서 지브롤터까지, 스릴과 희열 모두 있다.',
+                    explain: '',
+                    img: '',
+                },
+                ISTJ: {
+                    place: '일본의 교토',
+                    title: '체계적인 여행자',
+                    explain: '역사적인 유산과 조용한 도시 풍경을 경험할 수 있습니다.',
+                    img: 'kyoto.jpg',
+                    cdn: 'https://cdn.pixabay.com/photo/2016/12/06/17/11/fushimi-inari-shrine-1886975_1280.jpg',
+                },
+                ISFP: { place: 'test', title: '', explain: '', img: '' },
+                ISFJ: { place: 'test', title: '', explain: '', img: '' },
+                INFP: { place: 'test', title: '', explain: '', img: '' },
+                INFJ: {
+                    place: '로테르담, 네덜란드',
+                    title: '감각적이고 차분하며 따뜻한 도시',
+                    explain: '예술과 문화가 어우러진 평화로운 도시로 내면의 탐색에 적합합니다.',
+                    img: '',
+                },
+                INTP: { place: 'test', title: '', explain: '', img: '' },
+                INTJ: { place: '마운트어스파이어링 국립공원, 뉴질랜드', title: '', explain: '호수와 산들이 조화롭게 어우러진 아름다운 자연 경관을 즐길 수 있습니다.', img: '' },
+            };
+            function start() {
+                $('.start').hide();
+                $('.question').show();
+                next();
+            }
+            $('#A').click(function () {
+                var type = $('#type').val();
+                var preValue = $('#' + type).val();
+                $('#' + type).val(parseInt(preValue) + 1);
+                next();
+            });
+            $('#B').click(function () {
+                next();
+            });
+
+            function next() {
+                if (currentNum == 13) {
+                    $('.question').hide();
+                    $('.result').show();
+
+                    var mbti = '';
+                    $('#EI').val() >= 2 ? (mbti += 'E') : (mbti += 'I');
+                    $('#SN').val() >= 2 ? (mbti += 'S') : (mbti += 'N');
+                    $('#TF').val() >= 2 ? (mbti += 'T') : (mbti += 'F');
+                    $('#JP').val() >= 2 ? (mbti += 'J') : (mbti += 'P');
+                    alert(mbti);
+
+                    $('#place').text(results[mbti]['place']);
+                    $('#explain').text(results[mbti]['explain']);
+                    $('#img').attr('src', `./img/${results[mbti]['img']}`);
+                } else {
+                    $('.progress-bar').css({ width: `calc(100/12*${currentNum}%)` });
+                    $('#title').html(questions[currentNum]['title']);
+                    $('#type').val(questions[currentNum]['type']);
+                    $('#A').html(questions[currentNum]['A']);
+                    $('#B').html(questions[currentNum]['B']);
+                    currentNum++;
+                }
+            }
+        </script>
+    </body>
+</html>
