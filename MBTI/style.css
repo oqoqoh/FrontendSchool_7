@@ -1,3 +1,10 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('./img/airplane-g1b300fc6c_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 article {
     display: flex;
     flex-direction: column;
