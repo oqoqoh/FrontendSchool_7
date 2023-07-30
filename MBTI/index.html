@@ -11,8 +11,8 @@
     </head>
     <body class="container">
         <article class="start">
-            <h1 class="text-center mt-5">나랑 찰떡인 떡 종류는?</h1>
-            <button type="button" class="btn btn-outline-light btn-start" onclick="start()">테스트 시작</button>
+            <h1 class="text-center mt-5">나와 어울리는 여행지는?</h1>
+            <button type="button" class="btn btn-outline-light btn-start" onclick="start()">알아보기</button>
         </article>
 
         <article class="question">
@@ -29,8 +29,8 @@
 
         <article class="result">
             <img id="img" class="rounded mt-5" />
-            <h2 id="mbti" class="text-center mt-5"></h2>
-            <h3 id="place" class="text-center mt-2"></h3>
+            <h2 id="place" class="text-center mt-5"></h2>
+            <h3 id="mbti" class="text-center mt-2"></h3>
             <p id="placeTitle" class="text-center mt-2"></p>
             <p id="explain" class="text-center mt-2"></p>
         </article>
@@ -76,7 +76,7 @@
                     B: '완공일이 언제일까?',
                 },
                 6: {
-                    title: '인터넷의 마감 시간을 확인 후 간 식당. 영업이 끝났다.',
+                    title: '인터넷으로 마감 시간을 확인 후 도착한 식당. 영업이 끝났다.',
                     type: 'SN',
                     A: '하... 업데이트 좀 해라.',
                     B: '뭐지... 썸머타임인가?',
@@ -224,7 +224,7 @@
                     title: `헤밍웨이, 체 게바라, 모히또, 하바나 let's go`,
                     explain:
                         '이 사이트를 개발한 시간보다 INFP 성향의 당신이 만족할 여행지를 찾는데 더 많은 시간을 썼다. 쿠바? 의아해 할 수 있다. 하지만 자신있게 추천한다. 말레꼰의 선셋은 당신의 마음을 녹일것이고, 인생 최고의 모히또와 시가, 그리고 헤밍웨이의 노인과 바다가 눈 앞에 있다. 또한 도시 곳곳에 있는 체 게바라는 당신의 마음을 뜨겁게 만들 것이다.',
-                    img: 'architecture-ge263a183a_1280.jpg',
+                    img: 'mauro-lima-6wc7k129NbY-unsplash.jpg',
                 },
                 INFJ: {
                     place: '부다페스트',
@@ -277,7 +277,6 @@
                     $('#SN').val() >= 2 ? (mbti += 'S') : (mbti += 'N');
                     $('#TF').val() >= 2 ? (mbti += 'T') : (mbti += 'F');
                     $('#JP').val() >= 2 ? (mbti += 'J') : (mbti += 'P');
-                    alert(mbti);
 
                     $('#place').text(results[mbti]['place']);
                     $('#explain').text(results[mbti]['explain']);

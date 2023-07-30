@@ -17,18 +17,41 @@ h3,
 p,
 button {
     font-family: 'ChosunCentennial';
+    font-size: inherit;
     color: white;
+}
+
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.5em;
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3,
+    p {
+        font-size: 1em;
+    }
 }
 body {
     width: 100%;
-    height: 100%;
-
-    /* background-image: url('./img/chirag-nayak-vL46JiEBEVk-unsplash.jpg'); */
+    height: 100vh;
 
     background-image: url('./img/bg1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #060606;
+    background-position: 50% 0;
 }
 article {
     display: flex;
@@ -37,9 +60,8 @@ article {
 
 .start {
     height: 100vh;
-    background-color: rgba(248, 161, 206, 0.2);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .question {
