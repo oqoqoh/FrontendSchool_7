@@ -12,25 +12,27 @@
     <body class="container">
         <article class="start">
             <h1 class="text-center mt-5">나랑 찰떡인 떡 종류는?</h1>
-            <button type="button" class="btn btn-outline-success mt-5" onclick="start()">테스트 시작</button>
+            <button type="button" class="btn btn-outline-light btn-start" onclick="start()">테스트 시작</button>
         </article>
 
         <article class="question">
-            <div class="progress mt-5">
-                <div class="progress-bar bg-success" role="progressbar" style="width: calc(100 / 12 * 1%)"></div>
+            <div class="progress mt-5" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 1px">
+                <div class="progress-bar" style="width: calc(100 / 12 * 1%)"></div>
             </div>
 
             <h2 id="title" class="mt-5 text-center">질문</h2>
             <input id="type" type="hidden" value="EI" />
-            <button id="A" type="button" class="btn btn-success mt-5">Success</button>
+            <button id="A" type="button" class="btn btn-outline-light mt-5">Success</button>
 
-            <button id="B" type="button" class="btn btn-success mt-5">Success</button>
+            <button id="B" type="button" class="btn btn-outline-light mt-5">Success</button>
         </article>
 
         <article class="result">
-            <img id="img" class="rounded-pill mt-5" src="./img/cape-town.jpg" alt="cape town" />
-            <h2 id="place" class="text-center mt-5">결과</h2>
-            <h3 id="explain" class="text-center mt-5">내용</h3>
+            <img id="img" class="rounded mt-5" />
+            <h2 id="mbti" class="text-center mt-5"></h2>
+            <h3 id="place" class="text-center mt-2"></h3>
+            <p id="placeTitle" class="text-center mt-2"></p>
+            <p id="explain" class="text-center mt-2"></p>
         </article>
         <input type="hidden" id="EI" value="0" />
         <input type="hidden" id="SN" value="0" />
@@ -121,90 +123,116 @@
 
             const results = {
                 ESTP: {
-                    place: '0다낭',
-                    place: '',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    place: '다낭',
+                    mbti: 'ESTP',
+                    title: '먹고 또 먹고, 놀고 또 놀고',
+                    explain:
+                        '느낌따라 떠나고 싶다면 다낭을 추천한다. 한국에서 멀지 않고 직항도 있다. 물가도 상대적으로 저렴하다. 해변도 엄청나게 길다. 음식도 맛있고 대부분 우리 입맛에도 맞는다. 커피도 맛있다. 바다에서 수영하고 그랩으로 오토바이를 타고 맛집을 간 뒤 커피도 한 잔하고 또 수영하고 저녁도 푸짐하게 먹고 마사지도 받고 매일 먹고 놀며 휴식하게 가장 좋은 여행지이다. 또한 바나 힐, 썬월드, 근교인 호이안과 후에 등 볼거리도 많다.',
+                    img: 'danang.jpg',
                 },
                 ESTJ: {
-                    place: '0도쿄',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    place: '도쿄',
+                    mbti: 'ESTJ',
+                    title: '나의 도쿄 라멘 리스트는 책 한권',
+                    explain: `
+                    "도쿄? 많이 가봤는데"해도 도쿄를 추천한다. 이번에는 관광느낌의 여행보다는 새로운 테마를 정한 여행을 가보자. 모든 라멘의 종류를 먹어보기(츠케맨, 이에케, 지로, 시오, 쇼유, 아부라소바 등), 도쿄의 최고 카페를 가보자(산겐자야, 오모테산도, 칸다 등), 가와사키나 치바쪽을 깊게 여행해보자 등 전에는 못 보던 도쿄를 볼 수 있을것이다. 아니면 후지산 트레킹이나 후지큐, 요코하마 여행도 추천한다.`,
+                    img: 'tokyo.jpg',
                 },
                 ESFP: {
-                    place: '0세비야',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    place: '세비야, 그라나다, 말라가',
+                    mbti: 'ESFP',
+                    title: '플라맹고, 알함브라, 정열',
+                    explain:
+                        '당신의 흥. 스페인 남부로 떠나보자. 위 3도시 모두 멀지 않고 고유의 정열이 있다. 세비야의 스페인광장은 반달모양의 유니크함이 있고 사람 구경만 해도 청량하고 신선하다. 플라맹고 공연까지 본다면 춤을 안 출 수 가 없을것이다. 그리고 그라나다의 이슬람의 유산인 알함브라 궁전은 몇 번을 봐다 황홀하다. 벽의 타일 문양부터 구조와 배치, 색감 모두 신비롭다. 여행의 마지막은 말라가의 해변에서 마무리한다면 완벽할 것이다. 3 도시 모두 특유의 흥 넘치는 분위기가 있고 붉은 색감의 그 무언가가 마음 속 까지 꽉 채워줄 것이다.',
+                    img: 'granada.jpg',
                 },
                 ESFJ: {
-                    place: '벤쿠버, Banff',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    place: '밴프 국립공원',
+                    mbti: 'ESFJ',
+                    title: '로키산맥 속 에메랄드',
+                    explain:
+                        '여행의 모든 순간이 광고의 한 장면같기를 원한다면 캐나다 엘버타의 벤프 국립공원이 답이다. 처음 가본다면 투어를 추천한다. 세상에서 가장 아름다운 자연을 볼 수 있다. 그 중에서도 레이크 루이스는 정말로 장관이고 절경이며 신이 주신 선물이다. 에메랄드 빛 호수 위에서 카약은 꼭 타봤으면 한다. 또한 바퀴가 사람 키만한 설상차를 타고 떠나는 재스퍼의 콜롬비아 아스필드도 로키산맥 투어의 묘미 중 하나다.',
+                    img: 'lake-louis.jpg',
                 },
                 ENFP: {
-                    title: '0LOS ANGELES',
-                    explain: '',
-                    img: '',
+                    place: 'LOS ANGELES',
+                    mbti: 'ENFP',
+                    title: '보라빛 선셋, 에너지 충전 또 충전',
+                    explain:
+                        '몇 번을 가봤다 해도 추천은 LA다. 산타모니카와 베니스 비치부터 DTLA까지 곳곳이 에너지 충전소다. 식스플레그, 유니버셜 스튜디오, 디즈니랜드, 더 케티, 그리피스 천문대, MOCA, 디즈니 콘서트 홀, 다져스와 레이커스 홈 구장 등 즐길거리가 너무 많다. 또한 LA는 레전드 푸드트럭들이 참 많은데 곳곳에 숨겨진 트럭들을 찾아가는 재미도 빠질 수 없다. 이마저도 부족하다면 그랜드케니언까지 떠나보자. 아 그리고 필즈커피의 민트모히또는 나의 최애이기 때문에 추천하고 또 추천한다.',
+                    img: 'hollywood.jpg',
                 },
                 ENFJ: {
                     place: '몽골',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    mbti: 'ENFJ',
+                    title: '초원과 별 그리고 대화',
+                    explain:
+                        '여행지에 녹아들고 싶은 당신에게 몽골을 추천한다. 투어를 이용해도 좋고 친구들과 자유투어를 해도 좋다. 테를지의 드넓은 초원과 숲을 말을 타고 달려보고, 유목인처럼 게르에서도 자보고, 몽롱한 별도 보고, 아르부르드 사막에서 낙타도 타보자. 몽골 여행의 절반은 초원이고 칭키스칸이다. 그 나머지 반을 함께하는 사람들과의 추억으로 채운다면 앞으로 10년이상의 술안주가 될것이다.',
+                    img: 'mongolia.jpg',
                 },
                 ENTP: {
                     place: '멕시코시티',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    mbti: 'ENTP',
+                    title: '마야의 피라미드부터 현대의 멕시코까지',
+                    explain:
+                        '당신에게 새로운 호기심을 자극할 수 있는 도시, 멕시코시티를 추천한다. 우선 마야 문명의 유물인 테오티후아칸의 거대한 피라미드부터 보자. 고산지대에서 거대한 피라미드를 오른다면 고대문명이 주는 그 무언가를 온몸으로 느껴볼 수 있다. 그리고 인류학 박물관에서 거대한 태양의 돌과 마야문명을 온전히 보고 느껴보자. 또한 멕시코시티에는 수많은 미술관과 박물관, 멋진 건축물이 있다. 디에고 리베라부터 프리다 칼로, 공중에 떠있는 듯한 도서관 등 시간이 부족하다. 중간 중간 멕시코에서만 맛 볼 수 있는 정통 타코와 칠리망고로 체력을 보충하자.',
+                    img: 'mexico.jpg',
                 },
                 ENTJ: {
-                    place: '0울루루',
-                    title: '위치는 간단하다. 하지만 도착이 쉽지만은 않다.',
-                    explain: '',
-                    img: '',
+                    place: '울루루',
+                    mbti: 'ENTJ',
+                    title: '위치는 간단하다. 호주의 배꼽.',
+                    explain:
+                        '결코 쉬운 여행지는 아니다. 차로 이동하기에는 꽤나 멀고 비행편도 한정적이다. 숙식부터 캠핑, 동선 등 많은 정보가 필요하고 변수가 많은 여행일수 있다. 하지만 울루루가 주는 엄청난 스케일의 웅장함과 신비함은 모든 노고를 압도한다. 카타튜타와 킹스캐니언의 거대한 암석안에서 트레킹은 멋진 탐험이 될것이다. 또 해가지면 캠핑장 모닥불 앞에서 친구들과 이야기를 하며 하루를 끝내보자. 그리고 누웠을때 내 시야을 대각선으로 꽉 채운 은하수를 볼 수 있는건 울루루 여행만의 특권이다. 별을 세다 잠이들고 깨면 다시 별을 보고.',
+                    img: 'uluru.jpg',
                 },
                 ISTP: {
-                    place: '모험 변태 - 케이프타운',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    place: '케이프 타운',
+                    mbti: 'ISTP',
+                    title: '아프리카 최남단, 환상의 워터프론트',
+                    explain:
+                        '예상하지 못한 상황도 대담하게 해결하는 당신에게 아프리카의 남쪽 끝 케이프타운을 추천한다. 아프리카 중 가장      서구적이며 장관의 자연이 펼쳐져있다. 빅토리아 워터프론트에서 바라보는 테이블 마운틴과 이국적인 도심. 또한 아프리카의 최남단 희망봉을 가는 길에 너무나 아름다운 해안도로도 엄청난 모험이 될것이다. 해안가의 팽귄, 부두의 바다사자, 초원의 타조 또 테이블 마운틴과 시그널 힐 위에서 조망하는 케이프타운 평생 기억에 남을 것이다.',
+                    img: 'cape-town.jpg',
                 },
                 ISTJ: {
                     place: '로테르담, 암스테르담',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    mbti: 'ISTJ',
+                    title: '가장 혁신적이고 가장 운치있는 두 도시',
+                    explain:
+                        '알차고 속이 꽉찬 여행을 선호하는 당신에게 네덜란드의 로테르담과 암스테르담을 추천한다. 로테르담은 덜 알려져 있는 도시일 수 있지만 네덜란드에서 가장 현대적이고 혁신적인 건출물들이 많다. 유럽에서 가장 아름다운 꽂문양 아치의 마켓 홀, 큐브하우스 등이 있고 수많은 박물관 미술관으로 며칠도 모자랄 수 있지만 차분한 도시 분위기로 없던 여유도 생긴다. 암스테르담은 좀 더 관광지 느낌이 있지만 반 고호 미술관, 하이네켄 박물관, 운하를 걸어도 보고, 자전거 투어도 해보고, 보트도 타면서 즐기다 보면 아주 만족할 여행이 될 것이다.',
+                    img: 'houses-gb4a5f9aea_1280.jpg',
                 },
                 ISFP: {
-                    place: '0모로코',
+                    place: '모로코',
+                    mbti: 'ISFP',
                     title: '사하라 사막부터 지브롤터 해협까지',
                     explain:
-                        '사하라 부터 마라케시, 까사블랑카, 패스, 쉐프샤우엔, 아프리카가 끝나는 세우타까지 모든 도시가 같은 모로코가 맞나 싶을정도로 색다르다. 당신이 모로코에서 찍은 모든 사진과 영상은 인생 뮤직비디오가 될 것이다. 어딜 찍어도 감탄사가 나올 것이며 북아프리카의 매력을 모두 느끼길 바란다.',
-                    img: '',
+                        '새로운 여행이 필요한 당신에게 모로코를 추천한다. 사하라 부터 마라케시, 까사블랑카, 패스, 쉐프샤우엔, 아프리카가 끝나는 세우타까지 모든 도시가 같은 모로코가 맞나 싶을정도로 색다르다. 우리에게 꽤나 이국적인 환경과 익숙하지 않은 문화로 당신에게 새로운 모험이 될것이고 환상적인 뷰를 보게 될것이다. 어딜 찍어도 감탄사가 나올 것이며 북아프리카의 매력을 모두 직접 느끼길 바란다.',
+                    img: 'morocco-g59e885cd4_1280.jpg',
                 },
                 ISFJ: {
-                    place: '0헬싱키',
-                    title: '',
-                    explain: '',
-                    img: '',
+                    place: '헬싱키',
+                    mbti: 'ISFJ',
+                    title: '하얀 바탕에 파란 줄무늬, 편안하고 감각적인',
+                    explain:
+                        '감각적인 당신에게 추천하는 여행지는 핀란드의 수도 헬싱키이다. 도시 전체의 색감, 디자인 모두 깔끔하고 편안하다. 도시의 규모가 크지않아 적은 동선으로도 다양하게 즐길 수 있다. 여름의 백야, 겨울의 사우나, 최고의 연어와 청어 요리, 그리고 시원한 숲과 바다. 편안한 여행이 될 것이다. 침묵의교회와 암석교회의 새련된 구조, 도시 곳곳의 호수와 공원, 그사이에 너무 예쁜 식당과 카페들 그리고 무민까지! 또한 헬싱키에서 배를 타고 2시간이면 에스토니아도 여행 할 수 있다.',
+                    img: 'kamppi-chapel-of-silence-g13a0135e2_1280.jpg',
                 },
                 INFP: {
-                    place: '쿠바',
-                    title: '',
+                    place: '하바나',
+                    mbti: 'INFP',
+                    title: `헤밍웨이, 체 게바라, 모히또, 하바나 let's go`,
                     explain:
                         '이 사이트를 개발한 시간보다 INFP 성향의 당신이 만족할 여행지를 찾는데 더 많은 시간을 썼다. 쿠바? 의아해 할 수 있다. 하지만 자신있게 추천한다. 말레꼰의 선셋은 당신의 마음을 녹일것이고, 인생 최고의 모히또와 시가, 그리고 헤밍웨이의 노인과 바다가 눈 앞에 있다. 또한 도시 곳곳에 있는 체 게바라는 당신의 마음을 뜨겁게 만들 것이다.',
-                    img: '',
+                    img: 'architecture-ge263a183a_1280.jpg',
                 },
                 INFJ: {
-                    place: '0부다페스트',
-                    title: '감각적이고 차분하며 따뜻한 도시',
-                    explain: '고즉넉한 분위기',
-                    img: '',
+                    place: '부다페스트',
+                    mbti: 'INFJ',
+                    title: '잔잔하게 일렁이며 환상적인 야경',
+                    explain:
+                        '당장 마음의 충전이 필요한 당신에게 부다페스트를 추천한다. 뭘 하고 싶은지, 뭘 먹고 싶은지 계획은 평소의 반의 반으로 줄이고 고즈넉한 분위기의 도시 속 야외 온천도 즐기고 해가 지면 마음을 녹이는 야경을 잔뜩 눈에 담아 오자. 하루는 세체니 다리의 야경. 하루는 국회의사당의 야경. 또 하루는 왕궁의 야경. 시간이 된다면 프라하와 빈도 함께 다녀오는것을 추천한다. ',
+                    img: 'chain-bridge-g575f37316_1280.jpg',
                 },
                 INTP: {
                     place: '리스본과 포르토',
@@ -212,7 +240,7 @@
                     title: '대항해시대와 사색',
                     explain:
                         '무엇인가 골돌히 사색할 수 있게 해줄 여행지로 리스본과 포르토를 추천한다. 리스본의 발견기념비 앞에서 여정을 시작해보자. 항해왕자 엔리크와 바스쿠 다가마가 필두로 있는 거대한 배 형상의 기념비 앞에 선다면 인생이란 대항해의 출발점에 서있는 기분이 든다. 두 도시 모두 크지않아 도보로 이동가능하며 언덕들이 많아 도시를 조망하기 정말 좋다. 이 언덕에서 2시간, 저 카페에서 2시간, 저 다리앞에서 2시간 에그타르트와 포트와인을 곁들이며...',
-                    img: '',
+                    img: 'lisbon-g5ddae367e_1280.jpg',
                 },
                 INTJ: {
                     place: '베를린',
@@ -220,7 +248,7 @@
                     title: '유럽 최고 힙스터, 베를린',
                     explain:
                         '봐야할 곳, 가봐야 할 곳이 많은 당신에게 베를린을 추천한다. 파리나 런던은 후순위다. 베를린은 정말 힙하다. 카이저 빌헴름 교회 신관은 정말 초현실적이다. 유럽 교회의 뉴진스...? 또한 현대사에 큰 상징들이 많은 도시이다. 베를린 장벽, 체크포인트 찰리, 유대인 기념공원, 브란덴부르크 문, 페르가몬 박물관 등 정말 볼거리가 많다. 그리고 보난자커피와 커리부어스트, 맥주... 나열하기 힘들만큼 힙한 도시이다.',
-                    img: '',
+                    img: 'architecture-gce4696714_1280.jpg',
                 },
             };
             function start() {
@@ -242,6 +270,7 @@
                 if (currentNum == 13) {
                     $('.question').hide();
                     $('.result').show();
+                    $('body').css({ backgroundImage: 'none' });
 
                     var mbti = '';
                     $('#EI').val() >= 2 ? (mbti += 'E') : (mbti += 'I');
@@ -252,6 +281,8 @@
 
                     $('#place').text(results[mbti]['place']);
                     $('#explain').text(results[mbti]['explain']);
+                    $('#mbti').html(results[mbti]['mbti']);
+                    $('#placeTitle').html(results[mbti]['title']);
                     $('#img').attr('src', `./img/${results[mbti]['img']}`);
                 } else {
                     $('.progress-bar').css({ width: `calc(100/12*${currentNum}%)` });
