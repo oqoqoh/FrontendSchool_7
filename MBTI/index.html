@@ -27,13 +27,30 @@
             <button id="B" type="button" class="btn btn-outline-light mt-5">Success</button>
         </article>
 
-        <article class="result">
+        <article id="capture_area" class="result">
             <img id="img" class="rounded mt-5" />
             <h2 id="place" class="text-center mt-5"></h2>
             <h3 id="mbti" class="text-center mt-2"></h3>
             <p id="placeTitle" class="text-center mt-2"></p>
             <p id="explain" class="text-center mt-2"></p>
+
+            <ul class="sns">
+                <li class="facebook">
+                    <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림"><span class="skip">페이스북</span></a>
+                </li>
+                <li class="twitter">
+                    <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림"><span class="skip">트위터</span></a>
+                </li>
+                <li class="band">
+                    <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림"><span class="skip">네이버밴드</span></a>
+                </li>
+                <li class="naver">
+                    <a href="#n" onclick="fn_sendFB('naver');return false;" class="band" target="_self" title="네이버 새창열림"><span class="skip">네이버</span></a>
+                </li>
+            </ul>
+            Colored
         </article>
+
         <input type="hidden" id="EI" value="0" />
         <input type="hidden" id="SN" value="0" />
         <input type="hidden" id="TF" value="0" />
@@ -41,7 +58,25 @@
 
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
         <script>
+            function fn_sendFB(sns) {
+                var thisUrl = document.URL;
+                var snsTitle = '2021 웹진 [봄]';
+                if (sns == 'facebook') {
+                    var url = 'http://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(thisUrl);
+                    window.open(url, '', 'width=486, height=286');
+                } else if (sns == 'twitter') {
+                    var url = 'http://twitter.com/share?url=' + encodeURIComponent(thisUrl) + '&text=' + encodeURIComponent(snsTitle);
+                    window.open(url, 'tweetPop', 'width=486, height=286,scrollbars=yes');
+                } else if (sns == 'band') {
+                    var url = 'http://www.band.us/plugin/share?body=' + encodeURIComponent(snsTitle) + '&route=' + encodeURIComponent(thisUrl);
+                    window.open(url, 'shareBand', 'width=400, height=500, resizable=yes');
+                } else if (sns == 'naver') {
+                    var url = 'https://share.naver.com/web/shareView?url=' + encodeURIComponent(snsTitle) + '&title=' + encodeURIComponent(thisUrl);
+                    window.open(url, 'shareBand', 'width=400, height=500, resizable=yes');
+                }
+            }
             let currentNum = 1;
             const questions = {
                 1: {
@@ -135,7 +170,7 @@
                     mbti: 'ESTJ',
                     title: '나의 도쿄 라멘 리스트는 책 한권',
                     explain: `
-                    "도쿄? 많이 가봤는데"해도 도쿄를 추천한다. 이번에는 관광느낌의 여행보다는 새로운 테마를 정한 여행을 가보자. 모든 라멘의 종류를 먹어보기(츠케맨, 이에케, 지로, 시오, 쇼유, 아부라소바 등), 도쿄의 최고 카페를 가보자(산겐자야, 오모테산도, 칸다 등), 가와사키나 치바쪽을 깊게 여행해보자 등 전에는 못 보던 도쿄를 볼 수 있을것이다. 아니면 후지산 트레킹이나 후지큐, 요코하마 여행도 추천한다.`,
+                                "도쿄? 많이 가봤는데"해도 도쿄를 추천한다. 이번에는 관광느낌의 여행보다는 새로운 테마를 정한 여행을 가보자. 모든 라멘의 종류를 먹어보기(츠케맨, 이에케, 지로, 시오, 쇼유, 아부라소바 등), 도쿄의 최고 카페를 가보자(산겐자야, 오모테산도, 칸다 등), 가와사키나 치바쪽을 깊게 여행해보자 등 전에는 못 보던 도쿄를 볼 수 있을것이다. 아니면 후지산 트레킹이나 후지큐, 요코하마 여행도 추천한다.`,
                     img: 'tokyo.jpg',
                 },
                 ESFP: {
