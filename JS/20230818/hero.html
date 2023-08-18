@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let jsonObj = {};
+
+            function xhrRequest() {
+                const requestObj = new XMLHttpRequest();
+                //열고
+                requestObj.open('GET', 'hero.json');
+                //쏘고
+                requestObj.send();
+                //상태변하면 가져옴
+                requestObj.onreadystatechange = () => {
+                    if (requestObj.status == 200 && requestObj.readyState == 4) {
+                        jsonObj = JSON.parse(requestObj.responseText);
+                        console.log(jsonObj);
+                    }
+                };
+            }
+        </script>
+    </body>
+</html>
