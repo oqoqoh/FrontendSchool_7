@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또  만들기</title>
+    <script src="https://kit.fontawesome.com/32cd117d3a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  /* reset */
+  body,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  img {
+    vertical-align: top;
+  }
+  h1,
+  h2,
+  h3 {
+    font: inherit;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    font: inherit;
+    border: 0;
+    background: none;
+  
+  }
+  button:enabled {
+    cursor: pointer;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+  article{
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    gap: 10px;
+  }
+  ul{
+    display: inline-flex;
+    gap: 3px;
+    color: white;
+
+  }
+
+  li{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+  }
+  li:nth-child(1){
+    background-color: rgb(231, 85, 85);
+  }
+  li:nth-child(2){
+    background-color: rgb(232, 125, 75);
+  }
+  li:nth-child(3){
+    background-color: rgb(66, 200, 109);
+  }
+  li:nth-child(4){
+    background-color: rgb(60, 51, 187);
+  }
+  li:nth-child(5){
+    background-color: rgb(218, 234, 97);
+  }
+  li:nth-child(6){
+    background-color: rgb(138, 60, 127);
+  }
+  button{
+    font-size: 40px;
+  }
+  button i{
+
+
+    vertical-align: middle;
+  }
+</style>
+<body>
+  <article>
+    <ul class="lotto">
+      <!-- <li>33</li>
+      <li>44</li>
+      <li>55</li>
+      <li>66</li>
+      <li>77</li>
+      <li>88</li> -->
+    </ul>
+    <button class="btn"><i class="fa-sharp fa-solid fa-rotate"></i></button>
+  </article>
+  
+ <script>
+  const lottoList = document.querySelector('.lotto')
+  const updateBtn = document.querySelector('.btn');
+  
+  
+  function generateRandomNumbers() {
+    const newLottoSet = new Set();
+    
+     
+    while (newLottoSet.size < 6) {
+      const randomNumber = Math.floor((Math.random() * 45) + 1);
+      newLottoSet.add(randomNumber)
+
+    }
+    //<리뷰> - array로 변경해서 정렬 후 다시 Set으로 return하면 더 좋을거 같아요
+    const lottoArray = Array.from(newLottoSet).sort((a,b)=> a - b);
+
+    return new Set(lottoArray) ;
+  }
+
+  //<리뷰> - 함수의 기능이 update 보다는 html에 붙이는 기능이
+  //updateLottoList -> showLottoNumbers 도 괜찮을 듯 합니다.
+  function showLottoNumbers(newLottoSet) {
+    
+    lottoList.innerHTML = ''; 
+    newLottoSet.forEach(v => {
+      lottoList.innerHTML += `<li>${v}</li>`;
+    });
+
+  }
+
+
+  const lottoSet = generateRandomNumbers();
+  showLottoNumbers(lottoSet);
+
+  updateBtn.addEventListener('click', () => {
+    //<리뷰> - 상단에도 같은 변수명이 있으니 newLottoSet -> updateNumbers로 변경하면
+    //가독성 더 올라가지않나 그런 생각을 해봅니다.
+    //버튼 이름 도요!
+      const updateNumbers =  generateRandomNumbers();
+      showLottoNumbers(updateNumbers);
+  });
+</script>
+
+ </script>
+</body>
+</html>
