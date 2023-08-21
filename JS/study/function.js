@@ -21,6 +21,7 @@ const print = function () {
     //anonymous function
     console.log('print;');
 };
+
 print();
 const printAgain = print;
 printAgain();

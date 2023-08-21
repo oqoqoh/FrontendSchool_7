@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+    </head>
+    <body>
+        <div class="parent"></div>
+        <button>crete buttons</button>
+        <ul></ul>
+
+        <div id="parentElement">
+            <span id="childElement">hello guys~</span>
+        </div>
+
+        <script>
+            //메모리에만 존재하는 가상 돔
+            const text = document.createElement('p');
+            const text2 = document.createElement('p');
+            const textInside = document.createTextNode('p태그 입니다.');
+            text.appendChild(textInside);
+            text2.appendChild(textInside);
+            // //노드는 한 번만 쓰인다.
+            // //그래서 text.appendChild(textInside);->text2.appendChild(textInside); 이동했다.
+
+            const parent = document.querySelector('.parent');
+
+            parent.appendChild(text);
+            parent.appendChild(text2);
+
+            // parent.append('text입니다', text, text2);
+
+            // //parent.removeChild(text2);
+
+            const myBtn = document.querySelector('button');
+            const myUl = document.querySelector('ul');
+
+            myBtn.addEventListener('click', function () {
+                for (let i = 0; i < 5; i++) {
+                    const myLi = document.createElement('li');
+                    const btnDel = document.createElement('button');
+                    const btnTxt = document.createTextNode('버튼');
+
+                    btnDel.append(btnTxt);
+                    btnDel.addEventListener('click', () => {
+                        myLi.remove();
+                    });
+                    myLi.append('삭제하기: ', btnDel);
+                    myUl.appendChild(myLi);
+                }
+            });
+
+            // parentElement.insertBefore(target, location); target요소를 parentElement의 자식인 location 위치 앞으로 이동합니다.
+
+            var span = document.createElement('span');
+            var sibling = document.getElementById('childElement');
+            var parentDiv = document.getElementById('parentElement');
+            parentDiv.insertBefore(span, sibling);
+        </script>
+    </body>
+</html>

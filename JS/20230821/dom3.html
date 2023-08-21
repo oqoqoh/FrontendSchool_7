@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+    </head>
+    <body>
+        <p id="myTxt">hello lions</p>
+        <div>
+            <img src="https://static.ebs.co.kr/images/public/lectures/2014/06/19/10/bhpImg/44deb98d-1c50-4073-9bd7-2c2c28d65f9e.jpg" />
+        </div>
+
+        <ul>
+            <li>
+                <button data-name="redcola" data-cost="1000">
+                    <img src="" alt="콜라이미지" />
+                    <span>redcola</span>
+                    <strong>1000</strong>
+                </button>
+            </li>
+        </ul>
+
+        <script>
+            const target = document.querySelector('p');
+            const myimg = document.querySelector('img');
+            const idAttr = target.getAttribute('id');
+            console.log(idAttr);
+            //myimg.setAttribute('src', 'https://img.wendybook.com/image_detail/img159/159599_01.jpg');
+
+            const div = document.querySelector('div');
+            div.innerHTML = `
+            <img src="https://img.wendybook.com/image_detail/img159/159599_01.jpg" />
+            `;
+
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                console.log(this.dataset.name, this.dataset.cost);
+                console.log(this.querySelector('span').textContent);
+            });
+        </script>
+    </body>
+</html>
