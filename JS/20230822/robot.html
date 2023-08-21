@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>doc</title>
+    </head>
+    <body>
+        <script>
+            function Robot(foods) {
+                this.showMenu = () => {
+                    const index = parseInt(Math.random() * foods.length);
+                    console.log(foods[index]);
+                };
+            }
+
+            const robot = new Robot(['짜글짜글 감자탕', '걸쭉한 들깨칼국수', '쫀뜩쫀뜩 쌀떡볶이', '슴슴한 을지면옥 평양냉면', '크으 취한다 농민순대국']);
+
+            robot.showMenu();
+        </script>
+    </body>
+</html>

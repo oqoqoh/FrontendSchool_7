@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html></title>
+</head>
+<body>
+    <script>
+        const me = {
+                    name: '한재현',
+                    address: '제주도 제주시 인다 1길',
+                    phoneNum: '010-8000-0000',
+                    canWalk: function () {
+                        console.log('재현이가 걷는다.');
+                    },
+                    teaching: function (student) {
+                        student.levelUp();
+                    }
+                }
+
+        const lion = {
+            level: 1,
+            levelUp : function(){
+                this.level++;
+            }
+        }
+
+        me.teaching(lion);
+
+
+        const kyuYoung = {
+            name : '오규영',
+            pocketMoney : 10000,
+            goOutForDinner : () => {
+                console.log('외식을 한다.');
+            },
+            payForDinner : (account)=>{
+                if (account.balance > 0) {
+                    account.withdraw()
+                }
+            }
+        }
+        const account = {
+            title : '보통예금',
+            balance : 50000,
+            withdraw : () => {
+                this.balance -= 10000;
+            }
+
+        }
+    </script>
+</body>
+</html>
