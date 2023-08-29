@@ -54,7 +54,6 @@ section {
     background-color: white;
     width: 400px;
 }
-
 .drop-target {
     padding: 20px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
@@ -76,7 +75,19 @@ section {
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
+
+    /* 이미지 개별 drag가 안되도록 */
+    pointer-events: none;
 }
 .drag-item ~ li {
     margin-top: 10px;
+}
+
+/* dragging */
+.drag-item.dragging {
+    border: 1px dashed #ccc;
+    background-color: #f5f5f5;
+}
+.drag-item.dragging > * {
+    opacity: 0.2;
 }
