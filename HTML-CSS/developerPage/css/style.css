@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    height: 500vh;
+    background: linear-gradient(to bottom, rgb(248, 222, 73), rgb(248, 126, 248));
+}
+
+.wrap {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#path {
+    fill: none;
+    stroke: white;
+    stroke-width: 3px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* button : inline-block 요소 */
+/* 버튼 가운데 정렬 방법 1 */
+/* .btn-open{
+    display: block;
+    margin: auto; 
+  } */
+
+/* 버튼 가운데 정렬 방법 2 */
+.wrap {
+    text-align: center;
+}
+
+.btn-open {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: none;
+    color: white;
+    border-radius: 100px;
+    height: 60px;
+    font-size: 22px;
+    padding: 0 80px;
+    opacity: 0;
+
+    transition: all 0.3s;
+}
+
+.btn-open:enabled {
+    cursor: pointer;
+}
+.btn-open:enabled:hover {
+    color: rgb(242, 91, 242);
+    background-color: white;
+}
