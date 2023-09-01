@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>fetch2</title>
+    </head>
+    <body>
+        <script>
+            'use strict';
+
+            class UserStorage {
+                // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
+                searchUser(userName, password) {
+                    return fetch('users.json')
+                        .then((response) => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP ERROR state: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            return data.user.find((item) => {
+                                return item.userName === userName && item.password === password;
+                            });
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                }
+
+                // 유저에 맞는 인사말을 출력합니다.
+                sayHi(userName) {
+                    return fetch('greetings.json')
+                        .then((response) => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP ERROR state: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log('greetings ', data);
+                            return data.greetings.find((item) => {
+                                return item.userName === userName;
+                            });
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                }
+            }
+
+            const userStorage = new UserStorage();
+
+            const userName = prompt('이름을 입력하세요.');
+            const password = prompt('비밀번호를 입력하세요.');
+
+            userStorage
+                .searchUser(userName, password)
+                .then((result) => {
+                    console.log(result);
+                    return userStorage.sayHi(result.userName);
+                })
+                .then((result) => {
+                    console.log(result);
+                    alert(`${result.userName} !!!  ${result.greetings}`);
+                })
+                .catch((errorMsg) => {
+                    console.error(errorMsg);
+                });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>callback to promise</title>
+    </head>
+    <body>
+        <script>
+            const searchUser = (user, url) => {
+                return new Promise((resolve, reject) => {
+                    const requestObj = new XMLHttpRequest();
+                    requestObj.open('GET', `${url}`);
+                    requestObj.onreadystatechange = () => {
+                        if (requestObj.readyState === 4) {
+                            if (requestObj.status === 200) {
+                                const result = JSON.parse(requestObj.responseText);
+
+                                resolve(result);
+                            } else {
+                                reject(new Error(`no greetings`));
+                            }
+                        }
+                    };
+                    requestObj.send();
+                });
+            };
+
+            const userName = prompt('이름을 입력하세요');
+            const password = prompt('비밀번호를 입력하세요');
+
+            const user = { userName, password };
+
+            searchUser(user, 'users.json')
+                .then((data) => {
+                    const result = data.user.find((item) => {
+                        return item.userName === userName && item.password === password;
+                    });
+                    return searchUser(user, 'greetings.json');
+                })
+                .then((data) => {
+                    const result = data.greetings.find((item) => {
+                        return item.userName === userName;
+                    });
+                    console.log(result);
+                    alert(`${result.userName}님!  ${result.greetings}`);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        </script>
+    </body>
+</html>
