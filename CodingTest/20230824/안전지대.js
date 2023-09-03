@@ -35,26 +35,77 @@ const board3 = `[
 (i,  j-1) (i, j)  (i,  j+1)
 (i+1,j-1) (i+1,j) (i+1,j+1)
 `;
-//지뢰 x를 그리려하지 말고, 전체에서 갯수를 빼는 방법으로 하자.
-function solution2(board) {
-    const board2 = [...board];
+
+function solution4(board) {
+    let newBoard = [...board];
     const rows = board.length;
 
-    board.map((row, i) => {
-        row.map((pixel, j) => {
-            if (pixel === 1) {
-                //switch
-                //첫번째 행 && 첫번째 열
-                //첫번째 행 && 마지막 열
-                //첫번째 행
-                //마지막 행 && 첫번째 열
-                //마지막 행 && 마지막 열
-                //마지막 행
-                //첫번째 열
-                //마지막 열
-            }
-        });
-    });
-}
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < rows; j++) {
+            console.log(`board[${i}][${j}] ::`, board[i][j]);
 
-solution2(board);
+            if (board[i][j] === 1) {
+                if (i === 0 && j === 0) {
+                    //첫번째 행 && 첫번째 열
+                    newBoard[i][j + 1] = true;
+                    newBoard[i + 1][j] = true;
+                    newBoard[i + 1][j + 1] = true;
+                } else if (i === 0 && j === rows - 1) {
+                    //첫번째 행 && 마지막 열
+                    newBoard[i][j - 1] = true;
+                    newBoard[i + 1][j] = true;
+                    newBoard[i + 1][j - 1] = true;
+                } else if (i === 0) {
+                    //첫번째 행
+                    newBoard[i][j - 1] = true;
+                    newBoard[i][j + 1] = true;
+                    newBoard[i + 1][j - 1] = true;
+                    newBoard[i + 1][j] = true;
+                    newBoard[i + 1][j + 1] = true;
+                } else if (i === rows - 1 && j === 0) {
+                    //마지막 행 && 첫번째 열
+                    newBoard[i - 1][j] = true;
+                    newBoard[i - 1][j + 1] = true;
+                    newBoard[i][j + 1] = true;
+                } else if (i === rows - 1 && j === rows - 1) {
+                    //마지막 행 && 마지막 열
+                    newBoard[i - 1][j - 1] = true;
+                    newBoard[i - 1][j] = true;
+                    newBoard[i][j - 1] = true;
+                } else if (i === rows - 1) {
+                    //마지막 행
+                    newBoard[i - 1][j - 1] = true;
+                    newBoard[i - 1][j] = true;
+                    newBoard[i - 1][j + 1] = true;
+                    newBoard[i][j - 1] = true;
+                    newBoard[i][j + 1] = true;
+                } else if (j === 0) {
+                    //첫번째 열
+                    newBoard[i - 1][j] = true;
+                    newBoard[i - 1][j + 1] = true;
+                    newBoard[i][j + 1] = true;
+                    newBoard[i + 1][j] = true;
+                    newBoard[i + 1][j + 1] = true;
+                } else if (j === rows - 1) {
+                    //마지막 열
+                    newBoard[i - 1][j - 1] = true;
+                    newBoard[i - 1][j] = true;
+                    newBoard[i][j - 1] = true;
+                    newBoard[i + 1][j - 1] = true;
+                    newBoard[i + 1][j] = true;
+                } else {
+                    newBoard[i - 1][j - 1] = true;
+                    newBoard[i - 1][j] = true;
+                    newBoard[i - 1][j + 1] = true;
+                    newBoard[i][j - 1] = true;
+                    newBoard[i][j + 1] = true;
+                    newBoard[i + 1][j - 1] = true;
+                    newBoard[i + 1][j] = true;
+                    newBoard[i + 1][j + 1] = true;
+                }
+            }
+        }
+    }
+    console.log(newBoard);
+}
+solution4(board);
