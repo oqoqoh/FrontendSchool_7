@@ -1,341 +1,110 @@
-oqoqoh
-oqoqoh
-온라인
-
-8. 서주예 — 오늘 오후 1:35
-비동기코드 ? 데이터 요청 ?
-8. 김소희 — 오늘 오후 1:35
-데이터 가져오기
-아직 커피를 덜 가져왔으면 pending 인가요
-8. 서주예 — 오늘 오후 1:36
-아하
-8. 김모건 — 오늘 오후 1:36
-콘솔로그가 빨랐네 
-8. 김창영 — 오늘 오후 1:36
-덜가져왔다는게 어떤의미죠!?
-8. 서주예 — 오늘 오후 1:36
-근데 재현님
-8. 김창영 — 오늘 오후 1:36
-아하
-8. 서주예 — 오늘 오후 1:36
-setTimeout이나 setInterval이나 이런애들이
-비동기함수라는건
-8. 서동주 — 오늘 오후 1:36
-제 콘솔에는 pending이란 글자가 없어요!!!!@#@!@!
-8. 서주예 — 오늘 오후 1:36
-경험에 의한 습득인가요
-아님 무조건 알고 있어야하는 상식같은건가요
-8. 이주연 — 오늘 오후 1:36
-새로고침해봐도 안뜨나요?
-8. 서주예 — 오늘 오후 1:36
-넹'
-8. 김모건 — 오늘 오후 1:36
-그런데 "200" 이 아니라 === 200이 되는군요
-8. 서동주 — 오늘 오후 1:37
-감땅땅@!@#!@#
-8. 서주예 — 오늘 오후 1:37
-넵
-8. 이주연 — 오늘 오후 1:37
-넹
-8. 양혜진 — 오늘 오후 1:38
-0ms
-?
-8. 이주연 — 오늘 오후 1:38
-1 2 3 4 5 6
-8. 양혜진 — 오늘 오후 1:38
-123456 ??
-8. 정희수 — 오늘 오후 1:38
-순서대로?
-8. 김모건 — 오늘 오후 1:38
-똑같은 결과에요
-8. 이주연 — 오늘 오후 1:38
-ㄴ0ㄱ
-8. 정희수 — 오늘 오후 1:38
-뎃
-8. 양혜진 — 오늘 오후 1:38
-whyrano
-8. 서동주 — 오늘 오후 1:39
-말도안돼
-8. 김소희 — 오늘 오후 1:39
-랜덤인가요
-8. 김모건 — 오늘 오후 1:46
-빠져나왔어요
-8. 서주예 — 오늘 오후 1:48
-그런거같아여
-8. 신민재 — 오늘 오후 1:48
-넵
-8. 김창영 — 오늘 오후 1:48
-넹~~~~~~~~
-8. 김모건 — 오늘 오후 1:48
-그 문법적 설탕 그건가요?
-넵
-8. 양혜진 — 오늘 오후 1:49
-넘 어렵네요
-8. 최창호 — 오늘 오후 1:49
-넵!
-8. 조효은 — 오늘 오후 1:49
-어려워요
-8. 서동주 — 오늘 오후 1:49
-콜백지옥보다 훨씬 쉬워요!!
-8. 안정현 — 오늘 오후 1:49
-확실히 보기는 편하네요
-8. 김창영 — 오늘 오후 1:49
-모르겠어요~~!@~!@~!@~!@
-8. 이주연 — 오늘 오후 1:49
-지금은 Promise pending이 나오면 안되져?
-네
-넹
-(강사) 한재현 - Wade — 오늘 오후 1:50
-        const orderCoffee = new Promise((resolve, reject) => {
-            const requestObj = new XMLHttpRequest();
-            requestObj.open('GET', 'orderCofee.txt');
-            requestObj.onreadystatechange = () => {
-                if (requestObj.readyState === 4) {
-                    if (requestObj.status === 200) {
-                        const result = requestObj.responseText;
-                        resolve(result);
-                    } else {
-                        reject(new Error(`오늘의 커피 원두가 다 떨어졌습니다. ${requestObj.status}`));
-                    }
-                }
-            };
-            requestObj.send();
-        });
-
-        orderCoffee.then((asyncResult) => {
-            console.log(asyncResult);
-        }).catch((error) => {
-            console.log(error);
-        });
-멋쟁이사자처럼 봇 - FES 7기
-봇
- — 오늘 오후 1:50
-쉬는 시간입니다! 10분 뒤 정각에 뵙겠습니다 😉
-이미지
-멋쟁이사자처럼 봇 - FES 7기
-봇
- — 오늘 오후 2:00
-수업 시간입니다! 카메라를 켜고 자리에 앉아주세요 🤩
-이미지
-8. 양혜진 — 오늘 오후 2:24
-네
-8. 서주예 — 오늘 오후 2:24
-넵
-8. 김모건 — 오늘 오후 2:27
-resolve
-8. 김소희 — 오늘 오후 2:27
-resolve
-reject
-8. 김모건 — 오늘 오후 2:27
-reject
-8. 서주예 — 오늘 오후 2:27
-reject
-8. 이하연 — 오늘 오후 2:27
-reject
-8. 황시하 — 오늘 오후 2:29
-지금까지 코드 한번 보내주실수 있나여
-8. 이주연 — 오늘 오후 2:29
-:__~6:
-(강사) 한재현 - Wade — 오늘 오후 2:29
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-확장
-promiseHeaven.html
-4KB
-8. 황시하 — 오늘 오후 2:30
-감사합니다
-8. 김모건 — 오늘 오후 2:31
-return
-promise 
-8. 김소희 — 오늘 오후 2:32
-일치하는 유저 객체
-8. 서주예 — 오늘 오후 2:32
-promise?
-8. 이은경 — 오늘 오후 2:32
-promise객체
-8. 최창호 — 오늘 오후 2:32
-유저이름!
-8. 김소희 — 오늘 오후 2:32
-아~!
-8. 이은경 — 오늘 오후 2:33
-resolve reject
-8. 우준하 — 오늘 오후 2:33
-then catch
-8. 이승미 — 오늘 오후 2:33
-then, catch
-8. 정현지_1 — 오늘 오후 2:33
-then catch
-8. 이은경 — 오늘 오후 2:33
-아
-8. 김창영 — 오늘 오후 2:33
-어렵구만 역시!!!!!!!!!!!!!!!
-8. 이은경 — 오늘 오후 2:34
-resolve 후에
-8. 이주연 — 오늘 오후 2:34
-resolve될 때
-8. 정현지_1 — 오늘 오후 2:34
-resolve함수 실행될 때
-8. 김모건 — 오늘 오후 2:36
-then
-8. 서주예 — 오늘 오후 2:36
-promise 객체요
-8. 김소희 — 오늘 오후 2:36
-promise.......
-8. 김모건 — 오늘 오후 2:36
-ㅋㅋㅋ
-8. 김소희 — 오늘 오후 2:36
-sayhi resolve
-8. 서주예 — 오늘 오후 2:36
-resolve 함수 실행될때요
-8. 김모건 — 오늘 오후 2:38
-catch
-8. 서주예 — 오늘 오후 2:38
-catch ?
-간결해요
-8. 김모건 — 오늘 오후 2:39
-네
-8. 김소희 — 오늘 오후 2:39
-네!!
-8. 이희진 — 오늘 오후 2:39
-넵
-8. 송재웅 — 오늘 오후 2:39
-우와
-8. 이주연 — 오늘 오후 2:39
-그렇슴다!
-8. 박준홍 — 오늘 오후 2:39
-신기해요..
-8. 김창영 — 오늘 오후 2:39
-넴ㄴ앤[네ㅔ네네네네네!(@~!#&@!@!^&@#!^&@#^&~!#&^@#!&^~!#@^&#&^@!%#^#!$~@^#^$%~!#^@^!&#@~$%^@&~!#%^~!&@#&~!@#^@*~%#~!^&@%!~#~!
-8. 박재웅 — 오늘 오후 2:39
-넴넴
-8. 황시하 — 오늘 오후 2:39
-:code:
-8. 김하영 — 오늘 오후 2:40
-searchUser의 catch는 안써도 되나요??
-아하 넵
-8. 김창영 — 오늘 오후 2:41
-에러도
-보여주실 수이싼여
-오호
-(강사) 한재현 - Wade — 오늘 오후 2:42
-<!DOCTYPE html>
-<html lang="ko">
+        <!DOCTYPE html>
+        <html lang="ko">
+            <head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Document</title>
+            </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-확장
-promiseHeaven.html
-5KB
-﻿
-<!DOCTYPE html>
-<html lang="ko">
+            <body>
+                <script>
+                    'use strict';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+                    class UserStorage {
+                        // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
+                        searchUser(userName, password) {
+                            return new Promise((resolve, reject) => {
+                                const requestObj = new XMLHttpRequest();
+                                requestObj.open('GET', 'users.json'); // 요청 초기화
+                                requestObj.onreadystatechange = () => {
+                                    if (requestObj.readyState === 4 && requestObj.status === 200) {
+                                        const result = JSON.parse(requestObj.responseText).user.find((item) => {
+                                            return item.userName === userName && item.password === password;
+                                        });
 
-<body>
-    <script>
-        'use strict';
-
-        class UserStorage {
-            // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
-            searchUser(userName, password) {
-
-                return new Promise((resolve, reject) => {
-                    const requestObj = new XMLHttpRequest();
-                    requestObj.open('GET', 'users.json'); // 요청 초기화
-                    requestObj.onreadystatechange = () => {
-                        if (requestObj.readyState === 4 && requestObj.status === 200) {
-                            const result = JSON.parse(requestObj.responseText).user.find((item) => {
-                                return item.userName === userName && item.password === password
+                                        // 사용자가 입력한 정보와 일치하는 유저가 존재한다면
+                                        if (result) {
+                                            // 콜백함수를 실행하지 않고 resolve, reject를 실행합니다.
+                                            resolve(userName);
+                                            // onSuccess(userName);
+                                            // 사용자가 입력한 정보와 일치하는 유저가 존재하지 않는다면
+                                        } else {
+                                            reject(new Error('user not found'));
+                                        }
+                                    }
+                                };
+                                requestObj.send();
                             });
+                        }
 
-                            // 사용자가 입력한 정보와 일치하는 유저가 존재한다면 
-                            if (result) {
-                                // 콜백함수를 실행하지 않고 resolve, reject를 실행합니다.
-                                resolve(userName);
-                                // onSuccess(userName);
-                                // 사용자가 입력한 정보와 일치하는 유저가 존재하지 않는다면
-                            } else {
-                                reject(new Error('user not found'));
-                            }
+                        // 유저에 맞는 인사말을 출력합니다.
+                        sayHi(user) {
+                            return new Promise((resolve, reject) => {
+                                const requestObj = new XMLHttpRequest();
+                                requestObj.open('GET', 'greetings.json'); // 요청 초기화
+                                requestObj.onreadystatechange = () => {
+                                    if (requestObj.readyState === 4 && requestObj.status === 200) {
+                                        const result = JSON.parse(requestObj.responseText).greetings.find((item) => {
+                                            return item.userName === user;
+                                        });
+
+                                        // 사용자가 입력한 유저 이름과 일치하는 인사말이 존재한다면
+                                        if (result) {
+                                            resolve(result);
+                                            // 사용자가 입력한 유저 이름과 일치하는 인사말이 존재하지 않는다면
+                                        } else {
+                                            reject(new Error('no greetings'));
+                                        }
+                                    }
+                                };
+                                requestObj.send();
+                            });
                         }
                     }
-                    requestObj.send();
-                });
 
-            }
+                    const userStorage = new UserStorage();
 
-            // 유저에 맞는 인사말을 출력합니다.
-            sayHi(user) {
-                return new Promise((resolve, reject) => {
-                    const requestObj = new XMLHttpRequest();
-                    requestObj.open('GET', 'greetings.json'); // 요청 초기화
-                    requestObj.onreadystatechange = () => {
-                        if (requestObj.readyState === 4 && requestObj.status === 200) {
-                            const result = JSON.parse(requestObj.responseText).greetings.find((item) => {
-                                return item.userName === user
-                            });
+                    const userName = prompt('이름을 입력하세요.');
+                    const password = prompt('비밀번호를 입력하세요.');
 
-                            // 사용자가 입력한 유저 이름과 일치하는 인사말이 존재한다면 
-                            if (result) {
-                                resolve(result);
-                                // 사용자가 입력한 유저 이름과 일치하는 인사말이 존재하지 않는다면
-                            } else {
-                                reject(new Error('no greetings'));
-                            }
-                        }
-                    }
-                    requestObj.send();
-                });
-            }
-        }
+                    userStorage
+                        .searchUser(userName, password)
+                        .then((result) => {
+                            return userStorage.sayHi(result);
+                        })
+                        .then((result) => {
+                            alert(`당신에게 인사합니다! ${result.userName}님 ${result.greetings}`);
+                        })
+                        .catch((errorMsg) => {
+                            console.error(errorMsg);
+                        });
 
-
-        const userStorage = new UserStorage();
-
-        const userName = prompt('이름을 입력하세요.');
-        const password = prompt('비밀번호를 입력하세요.');
-
-        userStorage.searchUser(userName, password)
-            .then((result) => {
-                return userStorage.sayHi(result);
-            }).then((result) => {
-                alert(`당신에게 인사합니다! ${result.userName}님 ${result.greetings}`);
-            }).catch((errorMsg) => {
-                console.error(errorMsg);
-            });
-
-        // userStorage.searchUser(
-        //     userName,
-        //     password,
-        //     (name) => {
-        //         userStorage.sayHi(
-        //             name,
-        //             (result) => {
-        //                 alert(`당신에게 인사합니다! ${result.userName}님 ${result.greetings}`);
-        //             },
-        //             (error) => {
-        //                 console.log(error);
-        //             });
-        //     },
-        //     (error) => {
-        //         console.log(error);
-        //     }
-        // );
-
-    </script>
-</body>
-
+                    // userStorage.searchUser(
+                    //     userName,
+                    //     password,
+                    //     (name) => {
+                    //         userStorage.sayHi(
+                    //             name,
+                    //             (result) => {
+                    //                 alert(`당신에게 인사합니다! ${result.userName}님 ${result.greetings}`);
+                    //             },
+                    //             (error) => {
+                    //                 console.log(error);
+                    //             });
+                    //     },
+                    //     (error) => {
+                    //         console.log(error);
+                    //     }
+                    // );
+                </script>
+            </body>
+        </html>
+    </head>
 </html>
-promiseHeaven.html
-5KB
