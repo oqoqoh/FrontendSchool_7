@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(n) {
+                //숫자를 문자로 변환 -> 배열로 분리 -> 다시 숫자로 된 배열
+                let result = n
+                    .toString()
+                    .split('')
+                    .map((num) => parseInt(num));
+
+                //배열 모든 총합
+                return result.reduce((a, c) => a + c);
+            }
+
+            let n = 987;
+            console.log(solution(n));
+        </script>
+    </body>
+</html>
