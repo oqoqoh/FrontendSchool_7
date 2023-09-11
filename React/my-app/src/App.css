@@ -1,0 +1,19 @@
+.newClass {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ul-city {
+    width: 50%;
+    padding: 0;
+}
+
+.ul-city li {
+    list-style: none;
+    border: 1px solid black;
+}
+
+.ul-city li.on {
+    background-color: rgba(43, 86, 241, 0.8);
+    color: white;
+}
