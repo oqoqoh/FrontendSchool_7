@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>사무실몇명</title>
+    </head>
+    <body>
+        <script>
+            const log = [
+                { start: '09:12:23', end: '11:14:35' },
+                { start: '10:34:01', end: '13:23:40' },
+                { start: '10:34:31', end: '11:20:10' },
+            ];
+            const checkTime = '11:05:20';
+
+            let count = 0;
+
+            log.forEach((time) => {
+                // 출퇴근 로그를 전부 숫자로 바꿈
+                // '09:12:23' -> 091223
+                const check = parseInt(checkTime.replaceAll(':', ''));
+                const dayOn = parseInt(time.start.replaceAll(':', ''));
+                const dayOff = parseInt(time.end.replaceAll(':', ''));
+
+                // 그 사이의 기준시간이 있으면 count++
+                if (dayOn <= check && check <= dayOff) count++;
+            });
+
+            console.log(count);
+        </script>
+    </body>
+</html>

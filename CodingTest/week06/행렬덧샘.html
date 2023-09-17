@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>행렬의 덧셈</title>
+    </head>
+    <body>
+        <script>
+            // 행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.
+
+            function solution(arr1, arr2) {
+                let result = [];
+
+                // 행의 갯수
+                const rows = arr1.length;
+                // 열의 갯수
+                const cols = arr1[0].length;
+
+                for (let i = 0; i < rows; i++) {
+                    // 결과값 담을 임시 '행'의 배열
+                    let resultArr = [];
+                    for (let j = 0; j < cols; j++) {
+                        // arr1, arr2의 크기는 동일하니까 같은 i,j변수의 값을 추출 후 더함
+                        // 더한 값을 임시 '행'의 배열에 담는다
+                        resultArr.push(arr1[i][j] + arr2[i][j]);
+                    }
+                    // 최종 결과 배열 : [ [임시 '행'의 배열], ... ]
+                    result.push(resultArr);
+                }
+
+                return result;
+            }
+
+            let arr1 = [
+                [1, 2],
+                [2, 3],
+            ];
+            const arr2 = [
+                [3, 4],
+                [5, 6],
+            ];
+
+            solution(arr1, arr2);
+        </script>
+    </body>
+</html>
