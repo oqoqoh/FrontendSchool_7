@@ -1,0 +1,134 @@
+input,
+p,
+h1,
+img,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+button {
+    border: none;
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(293.21% 130.49% at 3.59% 5.28%, #f0f4ff 0%, #a5b6ee 100%);
+}
+
+header {
+    padding-top: 72px;
+}
+main {
+    padding-top: 60px;
+}
+.timer-container {
+    width: 400px;
+    height: 360px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 16px;
+    background: linear-gradient(144deg, #5572bb 2.13%, #374b7c 102.97%);
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+}
+.timer-container h1 {
+    margin-bottom: 57px;
+    color: #fff;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.timer-container .timer-input {
+    display: flex;
+}
+.timer-container .timer-input p {
+    color: #a5b6ee;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.timer-container .timer-input input {
+    width: 80px;
+    height: 98px;
+    background: linear-gradient(144deg, #304577 2.13%, #4c65a0 102.97%);
+
+    text-align: center;
+
+    color: #fff;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    border-radius: 10px;
+    margin: 5px;
+}
+.timer-container .timer-input input::placeholder {
+    color: #fff;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 12px;
+}
+.timer-controls button {
+    width: 112px;
+    height: 48px;
+    border-radius: 50px;
+    background: #324577;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05) inset;
+    margin-top: 40px;
+
+    color: #617199;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.btn-pause {
+    background: #15c2b8;
+}
+
+footer {
+    margin-top: 60px;
+    color: #8596bf;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}

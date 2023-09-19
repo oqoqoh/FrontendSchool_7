@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TIMER</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header><img src="./img/weniv.png" alt="weniv" /></header>
+        <main>
+            <div class="timer-container">
+                <h1>TIMER</h1>
+                <div class="timer-input">
+                    <div>
+                        <p>HRS</p>
+                        <input type="number" id="hours" placeholder="00" />
+                    </div>
+
+                    <div>
+                        <p>MIN</p>
+                        <input type="number" id="minutes" placeholder="00" />
+                    </div>
+                    <div>
+                        <p>SEC</p>
+                        <input type="number" id="seconds" placeholder="00" />
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button class="btn-start" type="button">Start</button>
+                    <button class="btn-pause" type="button">Pause</button>
+                    <button class="btn-reset" type="button">Reset</button>
+                </div>
+            </div>
+        </main>
+        <footer>ⓒ WENIV Corp.</footer>
+
+        <script>
+            let timer;
+            let isRunning = false;
+            let isInput = false;
+            let hoursInput = document.getElementById('hours');
+            let minutesInput = document.getElementById('minutes');
+            let secondsInput = document.getElementById('seconds');
+            let startButton = document.querySelector('.btn-start');
+            let pauseButton = document.querySelector('.btn-pause');
+            let resetButton = document.querySelector('.btn-reset');
+
+            pauseButton.style.display = 'none';
+            pauseButton.style.backgroundColor = '#15c2b8';
+            pauseButton.style.color = '#FFFFFF';
+
+            startButton.disabled = true;
+
+            // 시간 입력 확인
+            function enableButton() {
+                startButton.style.backgroundColor = '#5180FF';
+                resetButton.style.backgroundColor = '#FB7099';
+                startButton.style.color = '#FFFFFF';
+                resetButton.style.color = '#FFFFFF';
+
+                startButton.disabled = false;
+                isInput = true;
+            }
+
+            // 타이머 표시 업데이트
+            function updateTimerDisplay(totalSeconds) {
+                let hours = Math.floor(totalSeconds / 3600);
+                let minutes = Math.floor((totalSeconds % 3600) / 60);
+                let seconds = totalSeconds % 60;
+
+                hoursInput.value = hours;
+                minutesInput.value = minutes;
+                secondsInput.value = seconds;
+            }
+
+            // 타이머 동작 로직
+            function startTimer() {
+                let hours = parseInt(hoursInput.value) || 0;
+                let minutes = parseInt(minutesInput.value) || 0;
+                let seconds = parseInt(secondsInput.value) || 0;
+                let totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+                if (totalSeconds > 0) {
+                    isRunning = true;
+
+                    updateTimerDisplay(totalSeconds);
+
+                    timer = setInterval(() => {
+                        totalSeconds--;
+                        if (totalSeconds < 0) {
+                            clearInterval(timer);
+                            isRunning = false;
+                        } else {
+                            updateTimerDisplay(totalSeconds);
+                        }
+                    }, 1000);
+                }
+            }
+
+            // 숫자를 두 자리 문자열로 변환
+            function padZero(number) {
+                return number.toString().padStart(2, '0');
+            }
+
+            // 타이머 시작 버튼 클릭
+            startButton.addEventListener('click', () => {
+                if (!isRunning && isInput) {
+                    startButton.style.display = 'none';
+                    pauseButton.style.display = 'block';
+                    startTimer();
+                }
+            });
+
+            // 타이머 초기화 버튼 클릭
+            resetButton.addEventListener('click', () => {
+                clearInterval(timer);
+                isRunning = false;
+                isInput = false;
+
+                hoursInput.value = '';
+                minutesInput.value = '';
+                secondsInput.value = '';
+                updateTimerDisplay(0);
+
+                startButton.style.display = 'block';
+                pauseButton.style.display = 'none';
+
+                startButton.style.backgroundColor = '#324577';
+                resetButton.style.backgroundColor = '#324577';
+                startButton.style.color = '#617199';
+                resetButton.style.color = '#617199';
+            });
+
+            // 타이머 일시정지 버튼 클릭
+            pauseButton.addEventListener('click', () => {
+                if (isRunning) {
+                    clearInterval(timer);
+                    isRunning = false;
+                    startButton.disabled = false;
+                } else {
+                    startTimer();
+                }
+            });
+
+            // 숫자입력시 버튼 활성화
+            hoursInput.addEventListener('keydown', () => {
+                enableButton();
+            });
+            minutesInput.addEventListener('keydown', () => {
+                enableButton();
+            });
+            secondsInput.addEventListener('keydown', () => {
+                enableButton();
+            });
+        </script>
+    </body>
+</html>
