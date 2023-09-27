@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>anti TDD</title>
+        <style>
+            article {
+                display: inline-block;
+                border: 3px solid black;
+                border-radius: 15px;
+                padding: 20px;
+            }
+            .viewer {
+                display: block;
+                font-size: 24px;
+                color: teal;
+                margin: 50px 0 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            <strong class="viewer"></strong>
+            <input class="inp-txt" type="text" value="" />
+            <button class="btn-push" type="button" onclick="push()">적용</button>
+        </article>
+
+        <script>
+            // 전역변수의 사용, 함수가 아니기 때문에 테스가 자체가 불가능하다.
+            const viewer = document.querySelector('.viewer');
+            viewer.textContent = 'hello world';
+
+            // 재사용성이 떨어진다. 특정 클래스의 사용 등
+            // 호출하는 부분이 html, js가 섞여있다.
+            const push = () => {
+                const inputText = document.querySelector('.inp-txt');
+                viewer.textContent = inputText.value;
+            };
+        </script>
+    </body>
+</html>
