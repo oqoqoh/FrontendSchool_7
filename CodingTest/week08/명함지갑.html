@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>doc</title>
+    </head>
+    <body>
+        <script>
+            const sizes = [
+                //80,70,60,60, 50,30,30,40
+                //4000
+                [60, 50],
+                [30, 70],
+                [60, 30],
+                [80, 40],
+            ];
+            const sizes2 = [
+                //15,15,14,12,10 8,7,7,5,3
+                //120
+                [
+                    [10, 7],
+                    [12, 3],
+                    [8, 15],
+                    [14, 7],
+                    [5, 15],
+                ],
+            ];
+            const sizes3 = [
+                //19,18,16,14,11, 7,7,6,6,4
+                //13
+                [
+                    [14, 4],
+                    [19, 6],
+                    [6, 16],
+                    [18, 7],
+                    [7, 11],
+                ],
+            ];
+            const sizes4 = [
+                //20,19,18,16,14, 11,7,7,6,4
+                //13
+                [
+                    [14, 4],
+                    [19, 6],
+                    [20, 16],
+                    [18, 7],
+                    [7, 11],
+                ],
+            ];
+            function solution(sizes) {
+                //4,9,10,11,13,14,20 case fail
+                //한 명함의 가로,세로가 배열 중 가장 클 경우 실패함
+                const flatArray = sizes.flat().sort((a, b) => b - a);
+
+                return flatArray[0] * flatArray[flatArray.length / 2];
+            }
+
+            function solution2(sizes) {
+                // 명함 한 개씩, 가로-세로 크기를 큰 순서대로 바꿔준다.
+                sizes.forEach((card, idx) => {
+                    sizes[idx] = card.sort((a, b) => b - a);
+                });
+
+                // 가로 값 내림차순 정렬 후 첫번째 값
+                const width = sizes.map((card) => card[0]).sort((a, b) => b - a)[0];
+                // 세로 값 내림차순 정렬 후 첫번째 값
+                const height = sizes.map((card) => card[1]).sort((a, b) => b - a)[0];
+                return width * height;
+            }
+            solution2(sizes);
+        </script>
+    </body>
+</html>
